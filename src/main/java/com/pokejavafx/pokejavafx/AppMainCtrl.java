@@ -3,7 +3,7 @@ package com.pokejavafx.pokejavafx;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class AppMainCtrl {
     @FXML
     private Label welcomeText;
 
