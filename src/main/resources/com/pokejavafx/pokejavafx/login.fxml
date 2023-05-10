@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="601.0" styleClass="right-login" stylesheets="@../../../CSS/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="601.0" styleClass="right-login" stylesheets="@../../../CSS/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pokejavafx.pokejavafx.AppMainCtrl">
    <children>
       <AnchorPane layoutX="33.0" layoutY="20.0" prefHeight="180.0" prefWidth="252.0" styleClass="low-login" stylesheets="@../../../CSS/style.css">
          <children>
@@ -13,10 +13,10 @@
                <children>
                   <Label layoutX="31.0" layoutY="46.0" text="Usuario" />
                   <Label layoutX="26.0" layoutY="76.0" text="Password" />
-                  <TextField layoutX="85.0" layoutY="42.0" prefHeight="22.0" prefWidth="152.0" />
-                  <TextField layoutX="85.0" layoutY="72.0" prefHeight="22.0" prefWidth="152.0" />
+                  <TextField fx:id="TxtUsuario" layoutX="85.0" layoutY="42.0" prefHeight="22.0" prefWidth="152.0" />
+                  <TextField fx:id="TxtPass" layoutX="85.0" layoutY="72.0" prefHeight="22.0" prefWidth="152.0" />
                   <Label layoutX="91.0" layoutY="14.0" text="Iniciar sesion" />
-                  <Button layoutX="100.0" layoutY="118.0" mnemonicParsing="false" text="Login" />
+                  <Button fx:id="BtnLogin" layoutX="100.0" layoutY="118.0" mnemonicParsing="false" onAction="#OnClickLogin" text="Login" />
                </children>
             </AnchorPane>
          </children>
@@ -27,10 +27,10 @@
                <children>
                   <Label layoutX="31.0" layoutY="46.0" text="Usuario" />
                   <Label layoutX="26.0" layoutY="76.0" text="Password" />
-                  <TextField layoutX="85.0" layoutY="42.0" prefHeight="22.0" prefWidth="152.0" />
-                  <TextField layoutX="85.0" layoutY="72.0" prefHeight="22.0" prefWidth="152.0" />
+                  <TextField fx:id="TxtCrearUsuario" layoutX="85.0" layoutY="42.0" prefHeight="22.0" prefWidth="152.0" />
+                  <TextField fx:id="TxtCrearPass" layoutX="85.0" layoutY="72.0" prefHeight="22.0" prefWidth="152.0" />
                   <Label layoutX="91.0" layoutY="14.0" text="Crear usuario" />
-                  <Button layoutX="100.0" layoutY="118.0" mnemonicParsing="false" text="Crear" />
+                  <Button fx:id="BtnCrear" layoutX="100.0" layoutY="118.0" mnemonicParsing="false" onAction="#OnClickCrear" text="Crear" />
                </children>
             </AnchorPane>
          </children>
