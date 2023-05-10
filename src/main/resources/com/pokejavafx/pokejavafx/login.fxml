@@ -1,11 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="601.0" styleClass="right-login" stylesheets="@../../../CSS/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane layoutX="299.0" prefHeight="400.0" prefWidth="302.0" />
-      <AnchorPane prefHeight="400.0" prefWidth="302.0" styleClass="left-login" stylesheets="@../../../CSS/style.css" />
+      <AnchorPane layoutX="33.0" layoutY="20.0" prefHeight="180.0" prefWidth="252.0" styleClass="low-login" stylesheets="@../../../CSS/style.css">
+         <children>
+            <AnchorPane layoutX="-8.0" layoutY="-8.0" prefHeight="180.0" prefWidth="252.0" styleClass="left-login" stylesheets="@../../../CSS/style.css">
+               <children>
+                  <Label layoutX="31.0" layoutY="46.0" text="Usuario" />
+                  <Label layoutX="26.0" layoutY="76.0" text="Password" />
+                  <TextField layoutX="85.0" layoutY="42.0" prefHeight="22.0" prefWidth="152.0" />
+                  <TextField layoutX="85.0" layoutY="72.0" prefHeight="22.0" prefWidth="152.0" />
+                  <Label layoutX="91.0" layoutY="14.0" text="Iniciar sesion" />
+                  <Button layoutX="100.0" layoutY="118.0" mnemonicParsing="false" text="Login" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="33.0" layoutY="221.0" prefHeight="180.0" prefWidth="252.0" styleClass="low-login" stylesheets="@../../../CSS/style.css">
+         <children>
+            <AnchorPane layoutX="7.0" layoutY="-14.0" prefHeight="180.0" prefWidth="252.0" styleClass="left-login" stylesheets="@../../../CSS/style.css">
+               <children>
+                  <Label layoutX="31.0" layoutY="46.0" text="Usuario" />
+                  <Label layoutX="26.0" layoutY="76.0" text="Password" />
+                  <TextField layoutX="85.0" layoutY="42.0" prefHeight="22.0" prefWidth="152.0" />
+                  <TextField layoutX="85.0" layoutY="72.0" prefHeight="22.0" prefWidth="152.0" />
+                  <Label layoutX="91.0" layoutY="14.0" text="Crear usuario" />
+                  <Button layoutX="100.0" layoutY="118.0" mnemonicParsing="false" text="Crear" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

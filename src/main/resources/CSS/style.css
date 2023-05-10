@@ -1,3 +1,17 @@
 .left-login{
-    -fx-background-color: grey;
+    -fx-background-color: #424242;
+    -fx-background-radius: 10.0;
+
+}
+.right-login{
+    -fx-background-color: #121212;
+}
+.low-login{
+    -fx-background-color: #616161;
+    -fx-background-radius: 10.0;
+    -fx-border-width: 1 1 1 1;
+}
+.label{
+    -fx-font-family: Dekko;
+    -fx-text-fill: White;
 }
