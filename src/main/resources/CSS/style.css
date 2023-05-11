@@ -1,16 +1,7 @@
-.left-login{
-    -fx-background-color: #424242;
-    -fx-background-radius: 10.0;
+.background{
+    -fx-background-color: #2d3250;
+}
 
-}
-.right-login{
-    -fx-background-color: #121212;
-}
-.low-login{
-    -fx-background-color: #616161;
-    -fx-background-radius: 10.0;
-
-}
-.label{
-    -fx-text-fill: White;
+.tab-background{
+    -fx-background-color: #424769;
 }

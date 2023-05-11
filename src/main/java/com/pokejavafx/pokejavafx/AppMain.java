@@ -11,7 +11,7 @@ public class AppMain extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("login.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load(), 659, 501);
         stage.setTitle("PokeJavaFX");
         stage.setScene(scene);
         stage.show();
