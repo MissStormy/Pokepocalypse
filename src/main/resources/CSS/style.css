@@ -5,3 +5,7 @@
 .tab-background{
     -fx-background-color: #424769;
 }
+
+.label{
+    -fx-font-fill: #ffffff;
+}
