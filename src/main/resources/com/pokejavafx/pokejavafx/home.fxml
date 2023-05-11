@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="517.0" styleClass="right-login" stylesheets="@../../../CSS/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pokejavafx.pokejavafx.HomeCtrl">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button layoutX="62.0" layoutY="48.0" mnemonicParsing="false" prefHeight="146.0" prefWidth="161.0" text="Pokedex" />
-      <Button layoutX="284.0" layoutY="48.0" mnemonicParsing="false" prefHeight="146.0" prefWidth="161.0" text="Perfil" />
-      <Button layoutX="62.0" layoutY="218.0" mnemonicParsing="false" prefHeight="146.0" prefWidth="161.0" text="Tienda" />
-      <Button layoutX="284.0" layoutY="218.0" mnemonicParsing="false" prefHeight="146.0" prefWidth="161.0" text="Clicker" />
+      <ImageView fitHeight="407.0" fitWidth="606.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../img/Ciudad_Cerezo_HGSS.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="BtnClose" layoutX="560.0" layoutY="14.0" mnemonicParsing="false" onAction="#OnClickClose" prefHeight="22.0" prefWidth="26.0" text="X" />
+      <Button fx:id="BtnPerfil" layoutX="264.0" layoutY="165.0" mnemonicParsing="false" onAction="#OnClickPerfil" prefHeight="22.0" prefWidth="60.0" text="Perfil" />
+      <Button fx:id="BtnTienda" layoutX="221.0" layoutY="25.0" mnemonicParsing="false" onAction="#OnClickTienda" text="Tienda" />
+      <Button fx:id="BtnPokedex" layoutX="359.0" layoutY="25.0" mnemonicParsing="false" onAction="#OnClickPokedex" text="Pokedex" />
+      <Button fx:id="BtnClicker" layoutX="101.0" layoutY="14.0" mnemonicParsing="false" onAction="#OnClickClicker" text="Clicker" />
    </children>
 </AnchorPane>

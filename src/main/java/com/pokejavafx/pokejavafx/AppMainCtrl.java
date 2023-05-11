@@ -4,12 +4,15 @@ import javafx.application.HostServices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+
 import java.awt.Desktop;
 import java.net.URI;
 
@@ -22,6 +25,8 @@ import java.net.URISyntaxException;
 public class AppMainCtrl {
     @FXML
     private Hyperlink HyperGit;
+    @FXML
+    private Button BtnClose;
     @FXML
     private TextField txtCrearEmail;
 
@@ -51,6 +56,7 @@ public class AppMainCtrl {
         Stage stage = new Stage();
         stage.setTitle("PokeJavaFX");
         stage.setScene(scene);
+        stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
     }
 
@@ -60,7 +66,12 @@ public class AppMainCtrl {
         Desktop.getDesktop().browse(new URI("https://github.com/MissStormy/PokeJavaFX"));
     }
 
-
+    @FXML
+    void OnClickClose(ActionEvent event) {
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+    }
 
 
 }
