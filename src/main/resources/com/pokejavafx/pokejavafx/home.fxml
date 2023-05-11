@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="517.0" styleClass="left-login" stylesheets="@../../../CSS/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pokejavafx.pokejavafx.HomeCtrl">
+<AnchorPane prefHeight="400.0" prefWidth="517.0" styleClass="right-login" stylesheets="@../../../CSS/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pokejavafx.pokejavafx.HomeCtrl">
    <children>
       <Button layoutX="62.0" layoutY="48.0" mnemonicParsing="false" prefHeight="146.0" prefWidth="161.0" text="Pokedex" />
       <Button layoutX="284.0" layoutY="48.0" mnemonicParsing="false" prefHeight="146.0" prefWidth="161.0" text="Perfil" />
