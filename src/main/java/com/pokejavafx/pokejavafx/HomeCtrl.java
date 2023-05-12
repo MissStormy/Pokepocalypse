@@ -34,8 +34,17 @@ public class HomeCtrl {
     private Button BtnTienda;
 
     @FXML
-    void OnClickClicker(ActionEvent event) {
+    void OnClickClicker(ActionEvent event) throws IOException {
         //TODO: Hacer pantalla de clicker
+        FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("clicker.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.show();
+
+        Stage stagePrincipal = (Stage) BtnClicker.getScene().getWindow();
+        stagePrincipal.close();
 
     }
 
@@ -52,19 +61,39 @@ public class HomeCtrl {
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("perfil.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = new Stage();
-        stage.setTitle("PokeJavaFX");
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
+
+        Stage stagePrincipal = (Stage) BtnPerfil.getScene().getWindow();
+        stagePrincipal.close();
     }
 
     @FXML
-    void OnClickPokedex(ActionEvent event) {
+    void OnClickPokedex(ActionEvent event) throws IOException {
         //TODO: Hacer pokedex
+        FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("pokedex.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.show();
+
+        Stage stagePrincipal = (Stage) BtnPokedex.getScene().getWindow();
+        stagePrincipal.close();
     }
 
     @FXML
-    void OnClickTienda(ActionEvent event) {
+    void OnClickTienda(ActionEvent event) throws IOException {
         //TODO: Hacer tienda
+        FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("tienda.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.show();
+
+        Stage stagePrincipal = (Stage) BtnTienda.getScene().getWindow();
+        stagePrincipal.close();
     }
 }

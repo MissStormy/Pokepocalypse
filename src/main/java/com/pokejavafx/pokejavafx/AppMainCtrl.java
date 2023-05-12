@@ -28,6 +28,8 @@ public class AppMainCtrl {
     @FXML
     private Button BtnClose;
     @FXML
+    private Button BtnLogin;
+    @FXML
     private TextField txtCrearEmail;
 
     @FXML
@@ -58,6 +60,9 @@ public class AppMainCtrl {
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
+
+        Stage stagePrincipal = (Stage) BtnLogin.getScene().getWindow();
+        stagePrincipal.close();
     }
 
     @FXML
