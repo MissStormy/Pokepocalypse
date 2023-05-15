@@ -6,10 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -44,15 +41,7 @@ public class AppMainCtrl {
     @FXML
     private TextField txtUser;
 
-    @FXML
-    void OnClickCrear(ActionEvent event) {
-        //TODO: Aqui hay que meter la conexion y queries para guardar los datos en la BBDD
-    }
-
-    @FXML
-    void OnClickLogin(ActionEvent event) throws IOException  {
-        //TODO: Conexion con BBDD
-        //TODO: Array de backup mientras descubrimos como hacer la conexion
+    void login() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("home.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = new Stage();
@@ -63,6 +52,34 @@ public class AppMainCtrl {
 
         Stage stagePrincipal = (Stage) BtnLogin.getScene().getWindow();
         stagePrincipal.close();
+    }
+    @FXML
+    void OnClickCrear(ActionEvent event) {
+        //TODO: Aqui hay que meter la conexion y queries para guardar los datos en la BBDD
+    }
+
+    @FXML
+    void OnClickLogin(ActionEvent event) throws IOException  {
+        //TODO: Conexion con BBDD
+        //TODO: Array de backup mientras descubrimos como hacer la conexion
+        String user = txtUser.getText();
+        String pass = txtPass.getText();
+
+
+        if(user.equals("Stormy") && pass.equals("1234")){
+            login();
+        } else if (user.equals("Lokka") & pass.equals("4321")) {
+            login();
+        }else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Error de login");
+            alert.setContentText("Error, la contraseña o el user estan mal. En caso de que no tenga cuenta" +
+                    "vaya a sign up para crear una");
+            alert.showAndWait();
+
+        }
+
+
     }
 
     @FXML
