@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.pokejavafx.pokejavafx.PerfilCtrl"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pokejavafx.pokejavafx.PerfilCtrl">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="695.0" layoutX="-95.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../img/perfilBG.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="387.0" fitWidth="238.0" layoutX="224.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/pfpLara.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <Label layoutX="34.0" layoutY="77.0" prefHeight="61.0" prefWidth="170.0" text="Stormy" textFill="WHITE">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Button layoutX="508.0" layoutY="127.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="508.0" layoutY="170.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="508.0" layoutY="209.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="508.0" layoutY="246.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="22.0" layoutY="19.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="534.0" layoutY="19.0" mnemonicParsing="false" text="Button" />
+   </children>
 </AnchorPane>
