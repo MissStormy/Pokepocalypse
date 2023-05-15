@@ -7,7 +7,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../CSS/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pokejavafx.pokejavafx.ClickerCtrl">
    <children>
       <ImageView fitHeight="406.0" fitWidth="607.0" layoutX="-2.0" layoutY="-1.0" pickOnBounds="true">
@@ -20,5 +19,10 @@
       <Button fx:id="BtnCaminar" layoutX="264.0" layoutY="363.0" mnemonicParsing="false" onAction="#OnClickCamina" styleClass="button-perfil" text="Caminar" />
       <ProgressBar fx:id="PgBar" layoutX="39.0" layoutY="339.0" prefHeight="18.0" prefWidth="546.0" progress="0.0" />
       <Label fx:id="LbProgress" layoutX="157.0" layoutY="115.0" styleClass="label-perfil" text="0 Pasos dados" />
+      <ImageView fx:id="ImgChibi" fitHeight="169.0" fitWidth="168.0" layoutX="-32.0" layoutY="179.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../img/lara.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

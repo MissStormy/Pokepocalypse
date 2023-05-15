@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -29,6 +30,8 @@ public class ClickerCtrl implements Initializable {
 
     @FXML
     private Button BtnGoBack;
+    @FXML
+    private ImageView ImgChibi;
 
     @FXML
     private ProgressBar PgBar;
@@ -36,6 +39,7 @@ public class ClickerCtrl implements Initializable {
     @FXML
     void OnClickCamina(ActionEvent event) throws IOException {
         //TODO: Arreglar esto Vera, por el amor de Nyachan que me da algo
+        //TODO: No consigo enterarme de como mover al personaje
         if(progress < 1){
             progress += 0.1;
             PgBar.setProgress(progress);
@@ -78,6 +82,6 @@ public class ClickerCtrl implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        PgBar.setStyle("-fx-accent: #00FF00;");
+        PgBar.progressProperty().bindBidirectional(ImgChibi.translateXProperty());
     }
 }
