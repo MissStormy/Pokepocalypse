@@ -9,10 +9,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
+import javafx.scene.control.*;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -36,13 +34,23 @@ public class ClickerCtrl implements Initializable {
     private ProgressBar PgBar;
     double progress = 0.0;
     @FXML
-    void OnClickCamina(ActionEvent event) {
+    void OnClickCamina(ActionEvent event) throws IOException {
         if(progress < 1){
             progress += 0.1;
             PgBar.setProgress(progress);
             LbProgress.setText(Integer.toString((int)Math.round(progress*100)) + " Pasos dados");
-        }
+        }else {
+            FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("batalla.fxml"));
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.setTitle("PokeJavaFX");
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.show();
 
+            Stage stagePrincipal = (Stage) BtnCaminar.getScene().getWindow();
+            stagePrincipal.close();
+        }
 
     }
 

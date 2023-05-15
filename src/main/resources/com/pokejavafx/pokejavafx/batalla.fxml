@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="421.0" prefWidth="286.0" stylesheets="@../../../CSS/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pokejavafx.pokejavafx.BatallaCtrl">
+   <children>
+      <ImageView fitHeight="431.0" fitWidth="289.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../img/battleBG.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="80.0" fitWidth="132.0" layoutX="14.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/Banner.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="BtnAtrapar" layoutX="39.0" layoutY="351.0" mnemonicParsing="false" onAction="#OnClickAtrapar" styleClass="button-perfil" text="Atraparlo" />
+      <ImageView fitHeight="80.0" fitWidth="132.0" layoutX="142.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/Banner.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="BtnHuir" layoutX="185.0" layoutY="351.0" mnemonicParsing="false" onAction="#OnClickHuir" styleClass="button-perfil" text="Huir" />
+      <ImageView fitHeight="138.0" fitWidth="221.0" layoutX="36.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/battleui.png" />
+         </image>
+      </ImageView>
+      <TextArea fx:id="TxtBattle" layoutX="64.0" layoutY="179.0" prefHeight="68.0" prefWidth="168.0" promptText="Ante ti hay..." />
+   </children>
+</AnchorPane>
