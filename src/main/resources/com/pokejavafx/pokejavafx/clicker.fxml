@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.pokejavafx.pokejavafx.ClickerCtrl"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../CSS/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pokejavafx.pokejavafx.ClickerCtrl">
+   <children>
+      <ImageView fitHeight="406.0" fitWidth="607.0" layoutX="-2.0" layoutY="-1.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../img/clickerBG.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="BtnGoBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#OnClickGoBack" styleClass="button-perfil" text="Go back" />
+      <Button fx:id="BtnClose" layoutX="560.0" layoutY="14.0" mnemonicParsing="false" onAction="#OnClickClose" styleClass="button-perfil" text="X" />
+      <Button fx:id="BtnCaminar" layoutX="264.0" layoutY="363.0" mnemonicParsing="false" onAction="#OnClickCamina" styleClass="button-perfil" text="Caminar" />
+      <ProgressBar fx:id="PgBar" layoutX="39.0" layoutY="339.0" prefHeight="18.0" prefWidth="546.0" progress="0.0" />
+      <Label fx:id="LbProgress" layoutX="157.0" layoutY="115.0" styleClass="label-perfil" text="0 Pasos dados" />
+   </children>
 </AnchorPane>
