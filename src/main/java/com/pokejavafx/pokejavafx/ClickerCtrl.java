@@ -35,6 +35,7 @@ public class ClickerCtrl implements Initializable {
     double progress = 0.0;
     @FXML
     void OnClickCamina(ActionEvent event) throws IOException {
+        //TODO: Arreglar esto Vera, por el amor de Nyachan que me da algo
         if(progress < 1){
             progress += 0.1;
             PgBar.setProgress(progress);

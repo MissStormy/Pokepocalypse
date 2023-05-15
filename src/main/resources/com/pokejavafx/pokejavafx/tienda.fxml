@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.pokejavafx.pokejavafx.TiendaCtrl"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../CSS/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pokejavafx.pokejavafx.TiendaCtrl">
+   <children>
+      <AnchorPane layoutX="-1.0" layoutY="-1.0" prefHeight="51.0" prefWidth="608.0" styleClass="background">
+         <children>
+            <Button fx:id="BtnGoBack" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#OnClickGoBack" styleClass="button-perfil" text="Go back" />
+            <Button fx:id="BtnClose" layoutX="566.0" layoutY="12.0" mnemonicParsing="false" onAction="#OnClickClose" styleClass="button-perfil" text="X" />
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <AnchorPane layoutX="-1.0" layoutY="50.0" prefHeight="351.0" prefWidth="151.0" styleClass="tab-background">
+         <children>
+            <Button fx:id="BtnComprar" mnemonicParsing="false" onAction="#OnClickComprar" prefHeight="51.0" prefWidth="151.0" styleClass="button-tienda" text="Comprar" />
+            <Button fx:id="BtnVender" layoutY="51.0" mnemonicParsing="false" onAction="#OnClickVender" prefHeight="51.0" prefWidth="151.0" styleClass="button-tienda" text="Vender" />
+            <Button fx:id="BtnTransferir" layoutY="102.0" mnemonicParsing="false" onAction="#OnClickTransferir" prefHeight="51.0" prefWidth="151.0" styleClass="button-tienda" text="Transferir" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="150.0" layoutY="50.0" prefHeight="351.0" prefWidth="457.0">
+         <children>
+            <ImageView fitHeight="351.0" fitWidth="457.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../../../img/tiendabg.jpg" />
+               </image>
+            </ImageView>
+            <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="323.0" prefWidth="431.0" styleClass="text-area">
+               <children>
+                  <Label layoutX="118.0" layoutY="14.0" styleClass="label-perfil" text="Comprar" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="323.0" prefWidth="431.0" styleClass="text-area" visible="false">
+               <children>
+                  <Label layoutX="139.0" layoutY="14.0" styleClass="label-perfil" text="Vender" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="13.0" layoutY="14.0" prefHeight="323.0" prefWidth="431.0" styleClass="text-area" visible="false">
+               <children>
+                  <Label layoutX="112.0" layoutY="14.0" styleClass="label-perfil" text="Transferir" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
 </AnchorPane>

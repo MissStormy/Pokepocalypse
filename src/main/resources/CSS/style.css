@@ -69,3 +69,13 @@
     -fx-font-color: black;
 }
 
+/*Tienda*/
+.button-tienda{
+    -fx-background-color: #b242b4;
+    -fx-font-family: "Bauhaus 93";
+    -fx-font-size: 15px;
+}
+.button-tienda:hover {
+    -fx-background-color: rgba(53,89,119,0.4); /* Color cuando se pasa el cursor */
+    -fx-text-fill: #FFFFFF; /* Color del texto cuando se pasa el cursor */
+}
