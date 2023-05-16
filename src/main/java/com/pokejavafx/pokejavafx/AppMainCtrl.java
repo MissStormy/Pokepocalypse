@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -27,6 +28,11 @@ public class AppMainCtrl {
     @FXML
     private Button BtnLogin;
     @FXML
+    private Button BtnSignIn;
+
+    @FXML
+    private Button BtnSignUp;
+    @FXML
     private TextField txtCrearEmail;
 
     @FXML
@@ -36,10 +42,15 @@ public class AppMainCtrl {
     private TextField txtCrearUser;
 
     @FXML
-    private TextField txtPass;
+    private PasswordField txtPass;
 
     @FXML
     private TextField txtUser;
+    @FXML
+    private AnchorPane APSignIn;
+
+    @FXML
+    private AnchorPane APSignUp;
 
     void login() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("home.fxml"));
@@ -74,14 +85,22 @@ public class AppMainCtrl {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error de login");
             alert.setContentText("Error, la contraseña o el user estan mal. En caso de que no tenga cuenta" +
-                    "vaya a sign up para crear una");
+                    " vaya a sign up para crear una");
             alert.showAndWait();
 
         }
-
-
+    }
+    @FXML
+    void OnClickSignIn(ActionEvent event) {
+        APSignIn.setVisible(true);
+        APSignUp.setVisible(false);
     }
 
+    @FXML
+    void OnClickSignUp(ActionEvent event) {
+        APSignIn.setVisible(false);
+        APSignUp.setVisible(true);
+    }
     @FXML
     void OpenGitHub(ActionEvent event) throws URISyntaxException, IOException {
         //Un hyperlink que lleva a la pagina de GitHub

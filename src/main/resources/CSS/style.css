@@ -2,19 +2,32 @@
 .background{
     -fx-background-color: #2d3250;
 }
-
-.tab-background{
-    -fx-background-color: #424769;
-}
-
 .label{
-    -fx-text-fill: #ffffff;
+    -fx-font-color: white;
+}
+.tab-background{
+    -fx-background-color: transparent;
+    -fx-border-color: #6ECBF5;
 }
 
 .text-field{
-    -fx-border-color: grey;
-    -fx-border-width: 0 0 1 0;
-    -fx-background-color: #676f9d;
+    -fx-border-color: #C252E1;
+    -fx-border-width: 1 1 1 1;
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+.title-label{
+    -fx-font-family: "Bauhaus 93";
+    -fx-font-size: 40px;
+    -fx-font-color: black;
+}
+
+.login-buttons{
+    -fx-background-color: transparent;
+    -fx-border-color: #E0417B;
+    -fx-font-family: "Bauhaus 93";
+    -fx-font-size: 15px;
+    -fx-text-fill: white;
 }
 /*Home*/
 .button-home{
@@ -23,7 +36,6 @@
     -fx-font-size: 15px;
 
 }
-
 
 .label{
     -fx-font-family: "Bauhaus 93";
