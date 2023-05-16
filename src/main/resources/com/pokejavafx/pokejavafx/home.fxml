@@ -1,48 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../../CSS/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pokejavafx.pokejavafx.HomeCtrl">
    <children>
-      <ImageView fitHeight="477.0" fitWidth="662.0" layoutX="-20.0" layoutY="-46.0" pickOnBounds="true">
+      <ImageView fitHeight="448.0" fitWidth="677.0" layoutY="-48.0" pickOnBounds="true">
          <image>
-            <Image url="@../../../img/sinnoh.jpg" />
+            <Image url="@../../../img/homedefinitive.jpg" />
          </image>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
       </ImageView>
       <Button fx:id="BtnClose" layoutX="560.0" layoutY="14.0" mnemonicParsing="false" onAction="#OnClickClose" prefHeight="22.0" prefWidth="26.0" text="X" />
-      <ImageView fitHeight="54.0" fitWidth="82.0" layoutX="154.0" layoutY="243.0" pickOnBounds="true">
+      <Line endX="-9.0" endY="299.0" layoutX="81.0" layoutY="14.0" startX="-9.0" startY="-16.0" stroke="#ff06ff" strokeWidth="5.0">
+         <effect>
+            <BoxBlur />
+         </effect>
+      </Line>
+      <Line endX="63.0" endY="317.0" layoutX="91.0" layoutY="24.0" startX="63.0" startY="-25.0" stroke="#ff06ff" strokeWidth="5.0">
+         <effect>
+            <BoxBlur />
+         </effect>
+      </Line>
+      <ImageView fitHeight="316.0" fitWidth="166.0" layoutX="29.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../img/bubble.png" />
+            <Image url="@../../../img/homebuttons%20(3).png" />
          </image>
+         <effect>
+            <Glow level="0.71" />
+         </effect>
       </ImageView>
-      <Button fx:id="BtnPerfil" contentDisplay="CENTER" layoutX="160.0" layoutY="243.0" mnemonicParsing="false" onAction="#OnClickPerfil" prefHeight="35.0" prefWidth="70.0" styleClass="button-home" text="Perfil" />
-      <ImageView fitHeight="54.0" fitWidth="82.0" layoutX="78.0" layoutY="139.0" pickOnBounds="true">
+      <ImageView fitHeight="316.0" fitWidth="166.0" layoutX="29.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../img/bubble.png" />
+            <Image url="@../../../img/homebuttons%20(2).png" />
          </image>
+         <effect>
+            <Glow level="0.72" />
+         </effect>
       </ImageView>
-      <Button fx:id="BtnTienda" layoutX="81.0" layoutY="144.0" mnemonicParsing="false" onAction="#OnClickTienda" prefHeight="28.0" prefWidth="73.0" styleClass="button-home" text="Tienda">
+      <ImageView fitHeight="316.0" fitWidth="166.0" layoutX="29.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/homebuttons%20(5).png" />
+         </image>
+         <effect>
+            <Glow level="0.72" />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="316.0" fitWidth="166.0" layoutX="29.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/homebuttons%20(4).png" />
+         </image>
+         <effect>
+            <Glow level="0.71" />
+         </effect>
+      </ImageView>
+      <Button fx:id="BtnPerfil" contentDisplay="CENTER" layoutX="77.0" layoutY="30.0" mnemonicParsing="false" onAction="#OnClickPerfil" prefHeight="35.0" prefWidth="70.0" styleClass="button-home" text="Perfil" textFill="#92f870">
+         <effect>
+            <Glow level="0.75" />
+         </effect></Button>
+      <Button fx:id="BtnTienda" layoutX="71.0" layoutY="156.0" mnemonicParsing="false" onAction="#OnClickTienda" prefHeight="28.0" prefWidth="73.0" styleClass="button-home" text="Tienda" textFill="#ff9999">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
-         </font></Button>
-      <ImageView fitHeight="54.0" fitWidth="82.0" layoutX="358.0" layoutY="218.0" pickOnBounds="true">
-         <image>
-            <Image url="@../../../img/bubble.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="BtnPokedex" layoutX="358.0" layoutY="215.0" mnemonicParsing="false" onAction="#OnClickPokedex" prefHeight="41.0" prefWidth="82.0" styleClass="button-home" text="Pokedex">
+         </font>
+         <effect>
+            <Glow level="0.71" />
+         </effect></Button>
+      <Button fx:id="BtnClicker" layoutX="77.0" layoutY="88.0" mnemonicParsing="false" onAction="#OnClickClicker" prefHeight="35.0" prefWidth="70.0" styleClass="button-home" text="Clicker" textFill="#fbff7e">
+         <effect>
+            <Glow level="0.72" />
+         </effect>
+      </Button>
+      <Button fx:id="BtnPokedex" layoutX="66.0" layoutY="211.0" mnemonicParsing="false" onAction="#OnClickPokedex" prefHeight="41.0" prefWidth="82.0" styleClass="button-home" text="Pokedex" textFill="#83a4ff">
          <font>
             <Font name="Bauhaus 93" size="13.0" />
-         </font></Button>
-      <ImageView fitHeight="54.0" fitWidth="82.0" layoutX="407.0" layoutY="310.0" pickOnBounds="true">
+         </font>
+         <effect>
+            <Glow level="0.72" />
+         </effect></Button>
+      <ImageView fitHeight="158.0" fitWidth="250.0" layoutX="351.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../img/bubble.png" />
+            <Image url="@../../../img/homeInfo.png" />
          </image>
       </ImageView>
-      <Button fx:id="BtnClicker" layoutX="413.0" layoutY="310.0" mnemonicParsing="false" onAction="#OnClickClicker" prefHeight="35.0" prefWidth="70.0" styleClass="button-home" text="Clicker" />
+      <ImageView fitHeight="126.0" fitWidth="320.0" layoutX="266.0" layoutY="300.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/homeui.png" />
+         </image>
+      </ImageView>
+      <ProgressBar layoutX="361.0" layoutY="275.0" prefHeight="18.0" prefWidth="212.0" />
    </children>
 </AnchorPane>
