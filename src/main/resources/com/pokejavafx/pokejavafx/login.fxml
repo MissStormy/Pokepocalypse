@@ -23,7 +23,7 @@
             <DropShadow />
          </effect>
       </ImageView>
-      <AnchorPane fx:id="APSignIn" layoutX="20.0" layoutY="131.0" prefHeight="203.0" prefWidth="290.0" styleClass="tab-background">
+      <AnchorPane fx:id="APSignIn" layoutX="20.0" layoutY="131.0" prefHeight="203.0" prefWidth="290.0" styleClass="tab-background" visible="false">
          <children>
             <TextField fx:id="txtUser" layoutX="22.0" layoutY="29.0" prefHeight="22.0" prefWidth="247.0" promptText="Username" styleClass="text-field" />
             <PasswordField fx:id="txtPass" accessibleRole="PASSWORD_FIELD" layoutX="22.0" layoutY="79.0" prefHeight="22.0" prefWidth="247.0" promptText="Password" />
@@ -38,12 +38,12 @@
       </AnchorPane>
       <Hyperlink fx:id="HyperGit" layoutX="140.0" layoutY="443.0" onAction="#OpenGitHub" prefHeight="20.0" prefWidth="64.0" text="GitHub" textAlignment="CENTER" />
       <Button fx:id="BtnClose" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#OnClickClose" prefHeight="22.0" prefWidth="22.0" styleClass="button-perfil" text="X" />
-      <AnchorPane fx:id="APSignUp" layoutX="20.0" layoutY="131.0" prefHeight="239.0" prefWidth="290.0" visible="false">
+      <AnchorPane fx:id="APSignUp" layoutX="20.0" layoutY="131.0" prefHeight="239.0" prefWidth="290.0" styleClass="tab-background">
          <children>
             <TextField fx:id="txtCrearUser" layoutX="19.0" layoutY="31.0" prefHeight="22.0" prefWidth="246.0" promptText="Username" />
             <TextField fx:id="txtCrearPass" layoutX="19.0" layoutY="75.0" prefHeight="22.0" prefWidth="246.0" promptText="Password" />
             <TextField fx:id="txtCrearEmail" layoutX="19.0" layoutY="123.0" prefHeight="22.0" prefWidth="246.0" promptText="Email" />
-            <Button layoutX="105.0" layoutY="184.0" mnemonicParsing="false" onAction="#OnClickCrear" text="Crear cuenta" />
+            <Button layoutX="90.0" layoutY="184.0" mnemonicParsing="false" onAction="#OnClickCrear" styleClass="login-buttons" text="Crear cuenta" />
          </children>
          <effect>
             <DropShadow />
