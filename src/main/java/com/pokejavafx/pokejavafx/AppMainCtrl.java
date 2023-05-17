@@ -4,6 +4,7 @@ import javafx.application.HostServices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -17,10 +18,11 @@ import java.net.URI;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
-
-public class AppMainCtrl {
+public class AppMainCtrl{
     @FXML
     private Hyperlink HyperGit;
     @FXML
@@ -52,6 +54,12 @@ public class AppMainCtrl {
     @FXML
     private AnchorPane APSignUp;
 
+    //Cargamos la conexion con la BD
+    private DBConection pokeDB;
+    public void setDBConection(DBConection con){
+        pokeDB = con;
+    }
+    //Ya hemos cargado la conexion con BD
     void login() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("home.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -113,6 +121,7 @@ public class AppMainCtrl {
         Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
     }
+
 
 
 }
