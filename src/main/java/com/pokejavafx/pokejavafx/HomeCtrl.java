@@ -66,12 +66,13 @@ public class HomeCtrl {
         //TODO: Hacer perfil
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("perfil.fxml"));
         //Para enviar la conexion de bases de datos
+        Parent root = fxmlLoader.load();
         PerfilCtrl controller = fxmlLoader.getController();
         controller.setDBConection(pokeDB);
         //para enviar el usuario
         controller.setUser1(user1);
         //cargamos la escena
-        Scene scene = new Scene(fxmlLoader.load());
+        Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);

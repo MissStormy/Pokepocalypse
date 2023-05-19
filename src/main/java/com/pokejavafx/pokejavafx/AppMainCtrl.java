@@ -64,12 +64,13 @@ public class AppMainCtrl{
     void login(User user) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("home.fxml"));
         //Para enviar la conexion de bases de datos
+        Parent root = fxmlLoader.load();
         HomeCtrl controller = fxmlLoader.getController();
         controller.setDBConection(pokeDB);
         //para enviar el usuario
         controller.setUser1(user);
         //cargamos la escena
-        Scene scene = new Scene(fxmlLoader.load());
+        Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setTitle("PokeJavaFX");
         stage.setScene(scene);
