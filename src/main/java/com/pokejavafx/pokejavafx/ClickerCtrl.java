@@ -15,6 +15,9 @@ import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import javax.print.attribute.standard.Media;
+import javax.sound.sampled.*;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -36,6 +39,7 @@ public class ClickerCtrl implements Initializable {
     @FXML
     private ProgressBar PgBar;
     double progress = 0.0;
+
     @FXML
     void OnClickCamina(ActionEvent event) throws IOException {
         //TODO: Arreglar esto Vera, por el amor de Nyachan que me da algo
@@ -83,5 +87,17 @@ public class ClickerCtrl implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         PgBar.progressProperty().bindBidirectional(ImgChibi.translateXProperty());
+        /*File bgMusic = new File("Furret-Walk.wav");
+        try {
+            AudioInputStream audioStream = AudioSystem.getAudioInputStream(bgMusic);
+            Clip clip = AudioSystem.getClip();
+            clip.open(audioStream);
+
+            clip.start();
+        } catch (UnsupportedAudioFileException e) {
+            throw new RuntimeException(e);
+        } catch (IOException | LineUnavailableException e) {
+            throw new RuntimeException(e);
+        }*/
     }
 }
