@@ -6,18 +6,21 @@ package com.pokejavafx.pokejavafx;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.*;
 
-public class HomeCtrl {
+public class HomeCtrl implements Initializable {
     @FXML
     private Button BtnClicker;
 
@@ -32,6 +35,8 @@ public class HomeCtrl {
 
     @FXML
     private Button BtnTienda;
+    @FXML
+    private TextArea TxtWelcome;
 
     //Cargar base de datos
     private DBConection pokeDB;
@@ -100,5 +105,10 @@ public class HomeCtrl {
 
         Stage stagePrincipal = (Stage) BtnTienda.getScene().getWindow();
         stagePrincipal.close();
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        TxtWelcome.setText("Bienvenido de vuelta " + user1.getUsername());
     }
 }
