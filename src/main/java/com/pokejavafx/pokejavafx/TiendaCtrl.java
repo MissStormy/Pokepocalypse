@@ -69,6 +69,11 @@ public class TiendaCtrl implements Initializable {
     @FXML
     private Label LblSlot4;
 
+    //Cargamos la conexion con la BD
+    private DBConection pokeDB;
+    public void setDBConection(DBConection con){
+        pokeDB = con;
+    }
     @FXML
     void OnClickClose(ActionEvent event) {
         Node source = (Node) event.getSource();

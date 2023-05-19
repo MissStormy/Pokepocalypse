@@ -41,6 +41,12 @@ public class PerfilCtrl {
 
     @FXML
     private TableColumn<?, ?> Tbc2;
+
+    //Cargamos la conexion con la BD
+    private DBConection pokeDB;
+    public void setDBConection(DBConection con){
+        pokeDB = con;
+    }
     /*public void initialize() {
         // Configuración inicial del controlador
         initializeTableView();

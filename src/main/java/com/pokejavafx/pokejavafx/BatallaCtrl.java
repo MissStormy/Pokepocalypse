@@ -25,7 +25,11 @@ public class BatallaCtrl {
 
     @FXML
     private TextArea TxtBattle;
-
+    //Cargamos la conexion con la BD
+    private DBConection pokeDB;
+    public void setDBConection(DBConection con){
+        pokeDB = con;
+    }
     @FXML
     void OnClickAtrapar(ActionEvent event) {
 
