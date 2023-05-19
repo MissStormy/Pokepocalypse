@@ -3,17 +3,15 @@
  */
 package com.pokejavafx.pokejavafx;
 
-import javafx.scene.image.Image;
-
 public class User {
     private String username;
-    private String password;
+    private String lore;
     private String image;
 
     // Constructor, getters y setters para username, password e image
-    public User(String username, String password, String image){
+    public User(String username, String lore, String image){
         this.username = username;
-        this.password = password;
+        this.lore = lore;
         this.image = image;
     }
 
@@ -25,12 +23,12 @@ public class User {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
+    public String getLore() {
+        return lore;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setLore(String password) {
+        this.lore = password;
     }
 
     public String getImage() {

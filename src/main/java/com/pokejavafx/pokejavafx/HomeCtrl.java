@@ -33,6 +33,11 @@ public class HomeCtrl {
     @FXML
     private Button BtnTienda;
 
+    //Cargar base de datos
+    private DBConection pokeDB;
+    private User user1;
+    public void setDBConection(DBConection con){ pokeDB = con; }
+    public void setUser1(User user){ user1 = user; }
     @FXML
     void OnClickClicker(ActionEvent event) throws IOException {
         //TODO: Hacer pantalla de clicker

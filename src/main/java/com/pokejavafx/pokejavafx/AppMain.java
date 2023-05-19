@@ -19,7 +19,7 @@ public class AppMain extends Application {
         Parent root = fxmlLoader.load();
         AppMainCtrl controller = fxmlLoader.getController();
         controller.setDBConection(pokeDB);
-        //va a dar conflicto, SI
+        //cargamos la escena
         Scene scene = new Scene(root, 659, 501);
         stage.setTitle("PokeJavaFX");
         stage.setScene(scene);

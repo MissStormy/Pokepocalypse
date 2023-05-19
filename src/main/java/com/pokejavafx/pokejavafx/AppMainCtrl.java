@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
@@ -60,9 +61,16 @@ public class AppMainCtrl{
         pokeDB = con;
     }
     //Ya hemos cargado la conexion con BD
-    void login() throws IOException {
+    void login(User user) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        //Para enviar la conexion de bases de datos
+        Parent root = fxmlLoader.load();
+        HomeCtrl controller = fxmlLoader.getController();
+        controller.setDBConection(pokeDB);
+        //para enviar el usuario
+        controller.setUser1(user);
+        //cargamos la escena
+        Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setTitle("PokeJavaFX");
         stage.setScene(scene);
@@ -84,11 +92,9 @@ public class AppMainCtrl{
         String user = txtUser.getText();
         String pass = txtPass.getText();
 
-
-        if(user.equals("Stormy") && pass.equals("1234")){
-            login();
-        } else if (user.equals("Lokka") & pass.equals("4321")) {
-            login();
+        User user1 = pokeDB.login(user,pass);
+        if(user1!=null){
+            login(user1);
         }else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error de login");

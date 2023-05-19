@@ -33,4 +33,39 @@ public class DBConection {
             return false;
         }
     }
+    /*public Pokimon cargarPokimon(int id){
+        try {
+            Statement st = this.con.createStatement();
+            //todo acabar esto sacando todos los datos y estadisticas de un pokemon de la base de datos
+        }catch (
+                SQLException e){
+            this.ultimoError=e.toString();
+            System.out.println("Error al conectar a la base de datos.");
+            return null;
+        }
+
+    }*/
+
+    public User login(String nombre, String contrasenya){
+        System.out.println("Intentando autenticar con el usuario "+nombre);
+        try {
+            Statement st = this.con.createStatement();
+            ResultSet rs = st.executeQuery("select * from jugadores where nombre ='"+nombre+"'");
+            rs.next();
+            if (rs.getString("contrasenya").equals(contrasenya)) {
+                System.out.println("Usuario "+nombre+"autenticado con exito.");
+                st.close();
+                User usuario = new User(nombre,rs.getString("lore"),rs.getString("img"));
+                return usuario;
+            } else {
+                System.out.println("Fallo al autenticar el usuario contraseña incorrecta");
+                st.close();
+                return null;
+            }
+        }catch (SQLException e){
+            this.ultimoError=e.toString();
+            System.out.println("Error al conectar a la base de datos (¿usuario no existe?): "+e);
+            return null;
+        }
+    }
 }
