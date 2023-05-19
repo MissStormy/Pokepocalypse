@@ -42,7 +42,10 @@ public class HomeCtrl implements Initializable {
     private DBConection pokeDB;
     private User user1;
     public void setDBConection(DBConection con){ pokeDB = con; }
-    public void setUser1(User user){ user1 = user; }
+    public void setUser1(User user){
+        user1 = user;
+        TxtWelcome.setText("Bienvenido de vuelta " + user1.getUsername());
+    }
     @FXML
     void OnClickClicker(ActionEvent event) throws IOException {
         //TODO: Hacer pantalla de clicker
@@ -109,6 +112,6 @@ public class HomeCtrl implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        TxtWelcome.setText("Bienvenido de vuelta " + user1.getUsername());
+
     }
 }
