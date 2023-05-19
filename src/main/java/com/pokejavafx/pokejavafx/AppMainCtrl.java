@@ -1,10 +1,8 @@
 package com.pokejavafx.pokejavafx;
 
-import javafx.application.HostServices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,10 +15,7 @@ import java.awt.Desktop;
 import java.net.URI;
 
 import java.io.IOException;
-import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 
 public class AppMainCtrl{
@@ -83,12 +78,17 @@ public class AppMainCtrl{
     @FXML
     void OnClickCrear(ActionEvent event) {
         //TODO: Aqui hay que meter la conexion y queries para guardar los datos en la BBDD
+        String user = txtCrearUser.getText();
+        String pass = txtCrearPass.getText();
+        if (pokeDB.signup(user,pass,"")){
+            //todo mensaje de que se ha creado bien el usuario
+        }else {
+            //todo mensaje de que el usuario ya existe
+        }
     }
 
     @FXML
     void OnClickLogin(ActionEvent event) throws IOException  {
-        //TODO: Conexion con BBDD
-        //TODO: Array de backup mientras descubrimos como hacer la conexion
         String user = txtUser.getText();
         String pass = txtPass.getText();
 

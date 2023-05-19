@@ -46,6 +46,9 @@ public class DBConection {
 
     }*/
 
+    public String getUltimoError(){
+        return this.ultimoError;
+    }
     public User login(String nombre, String contrasenya){
         System.out.println("Intentando autenticar con el usuario "+nombre);
         try {
@@ -66,6 +69,25 @@ public class DBConection {
             this.ultimoError=e.toString();
             System.out.println("Error al conectar a la base de datos (¿usuario no existe?): "+e);
             return null;
+        }
+    }
+    public boolean signup(String nombre, String contrasenya, String img){
+        try {
+            Statement st = this.con.createStatement();
+            ResultSet rs = st.executeQuery("select * from jugadores where nombre ='"+nombre+"'");
+            if ( !rs.next() && !nombre.equals("") && !contrasenya.equals("") ) {//todo manejar de forma individual, mediante errores, si el nombre o la contraseña estan vacias
+                st.execute("INSERT INTO `pokejava`.`jugadores` (`nombre`, `contrasenya`, `img`) VALUES ('"+nombre+"', '"+contrasenya+"', '"+img+"');");
+                System.out.println("Usuario "+nombre+" creado correctamente");
+                return true;
+            } else {
+                System.out.println("Fallo crear el usuario, ya existe un usuario con ese nombre, el nombre esta vacio o la contraseña esta vacia");
+                st.close();
+                return false;
+            }
+        }catch (SQLException e){
+            this.ultimoError=e.toString();
+            System.out.println("Error crear usuario: "+e);
+            return false;
         }
     }
 }
