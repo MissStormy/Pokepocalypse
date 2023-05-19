@@ -6,23 +6,18 @@ package com.pokejavafx.pokejavafx;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 
 import java.io.IOException;
-import java.net.URL;
-import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.*;
 
-public class HomeCtrl implements Initializable {
+public class HomeCtrl {
     @FXML
     private Button BtnClicker;
 
@@ -37,14 +32,11 @@ public class HomeCtrl implements Initializable {
 
     @FXML
     private Button BtnTienda;
-    @FXML
-    private TextArea TxtWelcome;
 
     //Cargar base de datos
     private DBConection pokeDB;
     private User user1;
-    public void setDBConection(DBConection con){
-        pokeDB = con; }
+    public void setDBConection(DBConection con){ pokeDB = con; }
     public void setUser1(User user){ user1 = user; }
     @FXML
     void OnClickClicker(ActionEvent event) throws IOException {
@@ -108,12 +100,5 @@ public class HomeCtrl implements Initializable {
 
         Stage stagePrincipal = (Stage) BtnTienda.getScene().getWindow();
         stagePrincipal.close();
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        // Mostrar el saludo personalizado en el TextArea
-        TxtWelcome.setText("¡Hola, " + user1.getUsername() + "! Bienvenido a la aplicación.");
     }
 }
