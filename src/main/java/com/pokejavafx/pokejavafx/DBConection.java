@@ -53,9 +53,9 @@ public class DBConection {
             ResultSet rs = st.executeQuery("select * from jugadores where nombre ='"+nombre+"'");
             rs.next();
             if (rs.getString("contrasenya").equals(contrasenya)) {
-                System.out.println("Usuario "+nombre+"autenticado con exito.");
-                st.close();
+                System.out.println("Usuario "+nombre+" autenticado con exito.");
                 User usuario = new User(nombre,rs.getString("lore"),rs.getString("img"));
+                rs.close();
                 return usuario;
             } else {
                 System.out.println("Fallo al autenticar el usuario contraseña incorrecta");
