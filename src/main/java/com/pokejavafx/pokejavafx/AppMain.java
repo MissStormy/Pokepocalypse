@@ -16,11 +16,10 @@ public class AppMain extends Application {
         pokeDB = new DBConection("jdbc:mysql://localhost:3306/pokejava?serverTimezone=UTC","root","verysecret");
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("login.fxml"));
         //Para enviar la conexion de bases de datos
-        Parent root = fxmlLoader.load();
         AppMainCtrl controller = fxmlLoader.getController();
         controller.setDBConection(pokeDB);
         //cargamos la escena
-        Scene scene = new Scene(root, 659, 501);
+        Scene scene = new Scene(fxmlLoader.load(), 659, 501);
         stage.setTitle("PokeJavaFX");
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
