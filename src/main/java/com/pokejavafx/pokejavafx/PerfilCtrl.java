@@ -134,4 +134,23 @@ public class PerfilCtrl {
         TxtPerfil.setVisible(false);
         TbwCapturas.setVisible(true);
     }
+    @FXML
+    void OnClickAplicarDesc(ActionEvent event) {
+
+    }
+
+    @FXML
+    void OnClickAplicarNombre(ActionEvent event) {
+
+    }
+
+    @FXML
+    void OnClickBorrarTodo(ActionEvent event) {
+
+    }
+
+    @FXML
+    void OnClickCerrarSesion(ActionEvent event) {
+
+    }
 }
