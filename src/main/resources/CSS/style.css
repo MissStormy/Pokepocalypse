@@ -2,9 +2,7 @@
 .background{
     -fx-background-color: #2d3250;
 }
-.label{
-    -fx-font-color: white;
-}
+
 .tab-background{
     -fx-background-color: transparent;
     -fx-border-color: #6ECBF5;
@@ -37,11 +35,7 @@
 
 }
 
-.label{
-    -fx-font-family: "Bauhaus 93";
-    -fx-font-size: 15px;
-    -fx-font-color: black;
-}
+
 /*Perfil*/
 .text-area {
     -fx-background-color: rgba(53,89,119,0.4);
@@ -77,10 +71,15 @@
 }
 
 /*Pokedex*/
-.label-pokedex{
+.pokedex-label{
     -fx-font-family: "Bauhaus 93";
     -fx-font-size: 30px;
-    -fx-font-color: black;
+    -fx-text-fill: #D0F1FF;
+}
+.pokedex-little-label{
+    -fx-font-family: "Bauhaus 93";
+    -fx-font-size: 15px;
+    -fx-text-fill: #D0F1FF;
 }
 
 /*Tienda*/

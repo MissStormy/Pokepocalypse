@@ -10,6 +10,8 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -19,7 +21,17 @@ import java.util.*;
 public class PerfilCtrl {
     @FXML
     private Button BtnAbout;
+    @FXML
+    private AnchorPane APPerfil;
 
+    @FXML
+    private Button BtnAplicarNombre;
+
+    @FXML
+    private Button BtnBorrarDatos;
+
+    @FXML
+    private Button BtnCerrarSesion;
     @FXML
     private Button BtnClose;
 
@@ -28,7 +40,16 @@ public class PerfilCtrl {
 
     @FXML
     private Button BtnHunts;
+    @FXML
+    private Button BtnOpciones;
 
+    @FXML
+    private ImageView ImgPerfil;
+    @FXML
+    private TextField TxtCambiarDescripcion;
+
+    @FXML
+    private TextField TxtCambiarNombre;
     @FXML
     private Label LblPerfil;
 

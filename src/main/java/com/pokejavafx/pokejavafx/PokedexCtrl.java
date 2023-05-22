@@ -8,10 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -64,11 +61,22 @@ public class PokedexCtrl {
 
     @FXML
     private TextField TxtTipo;
+<<<<<<< Updated upstream
     //Cargamos la conexion con la BD
     private DBConection pokeDB;
     public void setDBConection(DBConection con){
         pokeDB = con;
     }
+=======
+    @FXML
+    private TableColumn<?, ?> TbcPokedex1;
+
+>>>>>>> Stashed changes
+    @FXML
+    private TableColumn<?, ?> TbcPokedex2;
+
+    @FXML
+    private TableView<?> TbvPokedex;
     @FXML
     void OnClickAnterior(ActionEvent event) {
 
