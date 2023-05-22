@@ -1,11 +1,10 @@
 package com.pokejavafx.pokejavafx;
 
-import javafx.application.HostServices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
@@ -16,10 +15,7 @@ import java.awt.Desktop;
 import java.net.URI;
 
 import java.io.IOException;
-import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 
 public class AppMainCtrl{
@@ -60,9 +56,16 @@ public class AppMainCtrl{
         pokeDB = con;
     }
     //Ya hemos cargado la conexion con BD
-    void login() throws IOException {
+    void login(User user1) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        //Para enviar la conexion de bases de datos
+        Parent root = fxmlLoader.load();
+        HomeCtrl controller = fxmlLoader.getController();
+        controller.setDBConection(pokeDB);
+        //para enviar el usuario
+        controller.setUser1(user1);
+        //cargamos la escena
+        Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setTitle("PokeJavaFX");
         stage.setScene(scene);
@@ -75,20 +78,23 @@ public class AppMainCtrl{
     @FXML
     void OnClickCrear(ActionEvent event) {
         //TODO: Aqui hay que meter la conexion y queries para guardar los datos en la BBDD
+        String user = txtCrearUser.getText();
+        String pass = txtCrearPass.getText();
+        if (pokeDB.signup(user,pass,"")){
+            //todo mensaje de que se ha creado bien el usuario
+        }else {
+            //todo mensaje de que el usuario ya existe
+        }
     }
 
     @FXML
     void OnClickLogin(ActionEvent event) throws IOException  {
-        //TODO: Conexion con BBDD
-        //TODO: Array de backup mientras descubrimos como hacer la conexion
         String user = txtUser.getText();
         String pass = txtPass.getText();
 
-
-        if(user.equals("Stormy") && pass.equals("1234")){
-            login();
-        } else if (user.equals("Lokka") & pass.equals("4321")) {
-            login();
+        User user1 = pokeDB.login(user,pass);
+        if(user1!=null){
+            login(user1);
         }else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error de login");

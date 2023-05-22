@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
@@ -40,10 +41,13 @@ public class ClickerCtrl implements Initializable {
     private ProgressBar PgBar;
     double progress = 0.0;
 
-    //Cargamos la conexion con la BD
+    //Cargar base de datos
     private DBConection pokeDB;
-    public void setDBConection(DBConection con){
-        pokeDB = con;
+    private User user1;
+    public void setDBConection(DBConection con){ pokeDB = con; }
+    public void setUser1(User user){
+        user1 = user;
+
     }
     @FXML
     void OnClickCamina(ActionEvent event) throws IOException {
@@ -78,7 +82,14 @@ public class ClickerCtrl implements Initializable {
     @FXML
     void OnClickGoBack(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        //Para enviar la conexion de bases de datos
+        Parent root = fxmlLoader.load();
+        HomeCtrl controller = fxmlLoader.getController();
+        controller.setDBConection(pokeDB);
+        //para enviar el usuario
+        controller.setUser1(user1);
+        //cargamos la escena
+        Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setTitle("PokeJavaFX");
         stage.setScene(scene);
