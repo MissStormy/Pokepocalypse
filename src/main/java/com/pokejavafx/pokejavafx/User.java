@@ -7,6 +7,9 @@ public class User {
     private String username;
     private String lore;
     private String image;
+    private Objeto obj1;
+    private Objeto obj2;
+    private Objeto obj3;
 
     // Constructor, getters y setters para username, password e image
     public User(String username, String lore, String image){

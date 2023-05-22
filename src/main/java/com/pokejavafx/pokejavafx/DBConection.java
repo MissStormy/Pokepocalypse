@@ -93,4 +93,47 @@ public class DBConection {
             return false;
         }
     }
+    public Pokimon[] getPokedex(){
+        try {
+            Statement st = this.con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = st.executeQuery("select * from pokedex");
+            int size = 0;
+            if(rs != null){ //Comprobar cuantos pokemon tenemos
+                rs.last();
+                size=rs.getRow();
+                rs.first();
+            }
+            Pokimon[] pokedex = new Pokimon[size];
+            while (rs.next()){
+                pokedex[rs.getRow()-1] = new Pokimon(rs.getString("Nombre"),rs.getInt("ID"),rs.getInt("Atq"),rs.getInt("Def"),rs.getInt("Peso"),rs.getString("Tipo"),rs.getString("Descripcion"),rs.getInt("evolucion"),rs.getInt("preevolucion"));
+            }
+            return pokedex;
+        }catch (SQLException e){
+            this.ultimoError=e.toString();
+            System.out.println("Error al conectar con la base de datos: "+e);
+            return null;
+        }
+    }
+    public Objeto[] getListaObjetos(){
+        try {
+            Statement st = this.con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = st.executeQuery("select * from objetos");
+            int size = 0;
+            if(rs != null){ //Comprobar cuantos pokemon tenemos
+                rs.last();
+                size=rs.getRow();
+                rs.first();
+            }
+            Objeto[] objs = new Objeto[size];
+            while (rs.next()){
+                objs[rs.getRow()-1] = new Objeto(rs.getInt("ID"),rs.getString("Nombre"),rs.getString("Descripcion"),rs.getInt("Precio"),rs.getInt("Tipo"),rs.getInt("Duracion"),rs.getInt("Potencia"));
+
+            }
+            return objs;
+        }catch (SQLException e){
+            this.ultimoError=e.toString();
+            System.out.println("Error al conectar con la base de datos: "+e);
+            return null;
+        }
+    }
 }

@@ -101,12 +101,11 @@ public class HomeCtrl implements Initializable {
     void OnClickPokedex(ActionEvent event) throws IOException {
         //TODO: Hacer pokedex
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("pokedex.fxml"));
-        //Para enviar la conexion de bases de datos
+        //Para enviar la conexion de bases de datos, el usuario y la pokedex
         Parent root = fxmlLoader.load();
         PokedexCtrl controller = fxmlLoader.getController();
-        controller.setDBConection(pokeDB);
-        //para enviar el usuario
-        controller.setUser1(user1);
+        Pokimon[] pkdx = pokeDB.getPokedex();
+        controller.setInitialValues(pokeDB,user1,pkdx);
         //cargamos la escena
         Scene scene = new Scene(root);
         Stage stage = new Stage();
@@ -122,12 +121,11 @@ public class HomeCtrl implements Initializable {
     void OnClickTienda(ActionEvent event) throws IOException {
         //TODO: Hacer tienda
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("tienda.fxml"));
-        //Para enviar la conexion de bases de datos
+        //Para enviar la conexion de bases de datos, el usuario y los objetos.
         Parent root = fxmlLoader.load();
         TiendaCtrl controller = fxmlLoader.getController();
-        controller.setDBConection(pokeDB);
-        //para enviar el usuario
-        controller.setUser1(user1);
+        Objeto[] objs = pokeDB.getListaObjetos();
+        controller.setInitialValues(pokeDB,user1,objs);
         //cargamos la escena
         Scene scene = new Scene(root);
         Stage stage = new Stage();
@@ -138,7 +136,6 @@ public class HomeCtrl implements Initializable {
         Stage stagePrincipal = (Stage) BtnTienda.getScene().getWindow();
         stagePrincipal.close();
     }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
