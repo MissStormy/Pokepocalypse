@@ -32,7 +32,6 @@ public class BatallaCtrl {
     public void setUser1(User user){
         user1 = user;
     }
-
     @FXML
     void OnClickAtrapar(ActionEvent event) {
 

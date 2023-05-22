@@ -9,14 +9,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import javax.swing.text.html.ImageView;
+
 import java.io.IOException;
 import java.util.*;
 
@@ -37,28 +35,37 @@ public class PokedexCtrl {
     private ImageView ImgPoke;
 
     @FXML
+    private ImageView ImgPoke1;
+
+    @FXML
+    private ImageView ImgPoke2;
+
+    @FXML
+    private ImageView ImgPoke3;
+
+    @FXML
+    private ImageView ImgPoke4;
+
+    @FXML
     private Label LblPoke;
 
     @FXML
-    private ListView<?> LvPokedex;
+    private Label LblPoke1;
 
     @FXML
-    private TextField TxtAltura;
+    private Label LblPoke2;
 
     @FXML
-    private TextField TxtAtq1;
+    private Label LblPoke3;
 
     @FXML
-    private TextField TxtAtq2;
+    private Label LblPoke4;
 
     @FXML
-    private TextField TxtAtq3;
+    private TextField TxtDefensa;
 
     @FXML
-    private TextField TxtAtq4;
-
-    @FXML
-    private TextField TxtEvolucion;
+    private TextArea TxtDesc;
 
     @FXML
     private TextField TxtPeso;
@@ -74,9 +81,16 @@ public class PokedexCtrl {
         pokedex = pokimons;
     }
 
+    //Cargamos la conexion con la BD
+    private DBConection pokeDB;
+    public void setDBConection(DBConection con){
+        pokeDB = con;
+    }
+
+
     @FXML
     void OnClickAnterior(ActionEvent event) {
-
+        //TODO: Con este boton, se tiene que mover el array/cosa un puesto hacia atras en la pokedex
     }
 
     @FXML
@@ -109,6 +123,6 @@ public class PokedexCtrl {
 
     @FXML
     void OnClickSiguiente(ActionEvent event) {
-
+        //TODO: Con este boton, se mueve 1 puesto hacia delante
     }
 }
