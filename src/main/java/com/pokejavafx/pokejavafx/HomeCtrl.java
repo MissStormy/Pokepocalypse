@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -50,7 +51,14 @@ public class HomeCtrl implements Initializable {
     void OnClickClicker(ActionEvent event) throws IOException {
         //TODO: Hacer pantalla de clicker
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("clicker.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        //Para enviar la conexion de bases de datos
+        Parent root = fxmlLoader.load();
+        ClickerCtrl controller = fxmlLoader.getController();
+        controller.setDBConection(pokeDB);
+        //para enviar el usuario
+        controller.setUser1(user1);
+        //cargamos la escena
+        Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
@@ -72,7 +80,14 @@ public class HomeCtrl implements Initializable {
     void OnClickPerfil(ActionEvent event) throws IOException {
         //TODO: Hacer perfil
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("perfil.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        //Para enviar la conexion de bases de datos
+        Parent root = fxmlLoader.load();
+        PerfilCtrl controller = fxmlLoader.getController();
+        controller.setDBConection(pokeDB);
+        //para enviar el usuario
+        controller.setUser1(user1);
+        //cargamos la escena
+        Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
@@ -86,7 +101,14 @@ public class HomeCtrl implements Initializable {
     void OnClickPokedex(ActionEvent event) throws IOException {
         //TODO: Hacer pokedex
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("pokedex.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        //Para enviar la conexion de bases de datos
+        Parent root = fxmlLoader.load();
+        PokedexCtrl controller = fxmlLoader.getController();
+        controller.setDBConection(pokeDB);
+        //para enviar el usuario
+        controller.setUser1(user1);
+        //cargamos la escena
+        Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
@@ -100,7 +122,14 @@ public class HomeCtrl implements Initializable {
     void OnClickTienda(ActionEvent event) throws IOException {
         //TODO: Hacer tienda
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("tienda.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        //Para enviar la conexion de bases de datos
+        Parent root = fxmlLoader.load();
+        TiendaCtrl controller = fxmlLoader.getController();
+        controller.setDBConection(pokeDB);
+        //para enviar el usuario
+        controller.setUser1(user1);
+        //cargamos la escena
+        Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);

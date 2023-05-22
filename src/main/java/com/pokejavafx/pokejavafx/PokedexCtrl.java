@@ -64,6 +64,10 @@ public class PokedexCtrl {
 
     @FXML
     private TextField TxtTipo;
+    private DBConection pokeDB;
+    public void setDBConection(DBConection con){ pokeDB = con; }
+    private User user1;
+    public void setUser1(User user){ user1 = user; }
 
     @FXML
     void OnClickAnterior(ActionEvent event) {

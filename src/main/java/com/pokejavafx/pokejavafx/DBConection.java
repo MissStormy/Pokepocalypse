@@ -33,10 +33,13 @@ public class DBConection {
             return false;
         }
     }
-    /*public Pokimon cargarPokimon(int id){
+    public Pokimon cargarPokimon(int id){
         try {
             Statement st = this.con.createStatement();
-            //todo acabar esto sacando todos los datos y estadisticas de un pokemon de la base de datos
+            ResultSet rs = st.executeQuery("select * from pokedex where id ='"+id+"'");
+            if (rs.next()){
+                return new Pokimon(rs.getString("Nombre"),rs.getInt("ID"),rs.getInt("Atq"),rs.getInt("Def"),rs.getInt("Peso"),rs.getString("Tipo"),rs.getString("Descripcion"),rs.getInt("evolucion"),rs.getInt("preevolucion"));
+            }else return new Pokimon ("Error",0,0,0,0,"null","Este pokimon no existe",0,0);
         }catch (
                 SQLException e){
             this.ultimoError=e.toString();
@@ -44,7 +47,7 @@ public class DBConection {
             return null;
         }
 
-    }*/
+    }
 
     public String getUltimoError(){
         return this.ultimoError;

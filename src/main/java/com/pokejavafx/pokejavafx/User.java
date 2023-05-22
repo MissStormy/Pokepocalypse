@@ -27,8 +27,8 @@ public class User {
         return lore;
     }
 
-    public void setLore(String password) {
-        this.lore = password;
+    public void setLore(String lore) {
+        this.lore = lore;
     }
 
     public String getImage() {

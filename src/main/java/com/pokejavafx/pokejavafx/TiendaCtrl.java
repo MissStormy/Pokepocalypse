@@ -68,6 +68,10 @@ public class TiendaCtrl implements Initializable {
 
     @FXML
     private Label LblSlot4;
+    private DBConection pokeDB;
+    public void setDBConection(DBConection con){ pokeDB = con; }
+    private User user1;
+    public void setUser1(User user){ user1 = user; }
 
     @FXML
     void OnClickClose(ActionEvent event) {

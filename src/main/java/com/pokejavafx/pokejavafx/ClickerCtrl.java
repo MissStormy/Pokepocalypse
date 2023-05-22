@@ -36,6 +36,14 @@ public class ClickerCtrl implements Initializable {
     @FXML
     private ProgressBar PgBar;
     double progress = 0.0;
+
+    //Cargar base de datos
+    private DBConection pokeDB;
+    private User user1;
+    public void setDBConection(DBConection con){ pokeDB = con; }
+    public void setUser1(User user){
+        user1 = user;
+    }
     @FXML
     void OnClickCamina(ActionEvent event) throws IOException {
         //TODO: Arreglar esto Vera, por el amor de Nyachan que me da algo
