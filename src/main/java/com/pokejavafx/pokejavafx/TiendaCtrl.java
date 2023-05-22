@@ -79,7 +79,7 @@ public class TiendaCtrl implements Initializable {
     }
 
     //Cargamos la conexion con la BD
-    private DBConection pokeDB;
+    //private DBConection pokeDB;
     public void setDBConection(DBConection con){
         pokeDB = con;
     }
