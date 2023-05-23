@@ -46,6 +46,7 @@ public class ClickerCtrl implements Initializable {
         pokeDB = con;
         user1 = user;
         pokedex = pokimons;
+
     }
     @FXML
     void OnClickCamina(ActionEvent event) throws IOException {
