@@ -88,7 +88,7 @@
             <Button fx:id="BtnPokeLista" layoutX="26.0" layoutY="324.0" mnemonicParsing="false" onAction="#OnClickPokeLista" styleClass="login-buttons" text="Pokedex" />
          </children>
       </AnchorPane>
-      <Button layoutX="24.0" layoutY="25.0" mnemonicParsing="false" styleClass="login-buttons" text="Go back" />
-      <Button layoutX="556.0" layoutY="18.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="30.0" styleClass="login-buttons" text="X" />
+      <Button fx:id="BtnGoBack" layoutX="24.0" layoutY="25.0" mnemonicParsing="false" onAction="#OnClickGoBack" styleClass="login-buttons" text="Go back" />
+      <Button fx:id="BtnClose" layoutX="556.0" layoutY="18.0" mnemonicParsing="false" onAction="#OnClickClose" prefHeight="22.0" prefWidth="30.0" styleClass="login-buttons" text="X" />
    </children>
 </AnchorPane>

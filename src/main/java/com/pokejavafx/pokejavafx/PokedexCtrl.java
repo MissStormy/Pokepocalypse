@@ -8,10 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -21,50 +18,49 @@ import java.util.*;
 
 public class PokedexCtrl {
     @FXML
-    private Button BtnAnterior;
-
-    @FXML
     private Button BtnClose;
 
     @FXML
     private Button BtnGoBack;
 
     @FXML
-    private Button BtnSiguiente;
+    private Button BtnPokeLista;
 
     @FXML
-    private ImageView ImgPoke;
+    private Button BtnPokeVista;
 
     @FXML
     private Label LblPoke;
 
     @FXML
-    private ListView<?> LvPokedex;
+    private Label LblPoke1;
 
     @FXML
-    private TextField TxtAltura;
+    private Label LblPoke2;
 
     @FXML
-    private TextField TxtAtq1;
+    private Label LblPoke3;
 
     @FXML
-    private TextField TxtAtq2;
+    private Label LblPoke4;
 
     @FXML
-    private TextField TxtAtq3;
+    private Label LblPokeName;
 
     @FXML
-    private TextField TxtAtq4;
+    private Label LblTipo;
 
     @FXML
-    private TextField TxtEvolucion;
+    private TextField TxtAtaque;
+
+    @FXML
+    private TextField TxtDefensa;
+
+    @FXML
+    private TextArea TxtDescripcion;
 
     @FXML
     private TextField TxtPeso;
-
-    @FXML
-    private TextField TxtTipo;
-
 
     @FXML
     void OnClickAnterior(ActionEvent event) {
