@@ -54,8 +54,9 @@ public class HomeCtrl implements Initializable {
         //Para enviar la conexion de bases de datos
         Parent root = fxmlLoader.load();
         ClickerCtrl controller = fxmlLoader.getController();
-        Pokimon[] pkdx = pokeDB.getPokedex();
-        controller.setInitialValues(pokeDB,user1,pkdx);
+        controller.setDBConection(pokeDB);
+        //para enviar el usuario
+        controller.setUser1(user1);
         //cargamos la escena
         Scene scene = new Scene(root);
         Stage stage = new Stage();
