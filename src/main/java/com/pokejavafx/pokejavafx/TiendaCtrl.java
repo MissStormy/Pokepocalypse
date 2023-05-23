@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -68,12 +69,16 @@ public class TiendaCtrl implements Initializable {
 
     @FXML
     private Label LblSlot4;
-
-    //Cargamos la conexion con la BD
     private DBConection pokeDB;
-    public void setDBConection(DBConection con){
+    private User user1;
+    private Objeto[] objs;
+    public void setInitialValues(DBConection con,User user,Objeto[] objetos){
         pokeDB = con;
+        user1 = user;
+        objs = objetos;
     }
+
+
     @FXML
     void OnClickClose(ActionEvent event) {
         Node source = (Node) event.getSource();
@@ -91,7 +96,14 @@ public class TiendaCtrl implements Initializable {
     @FXML
     void OnClickGoBack(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("home.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        //Para enviar la conexion de bases de datos
+        Parent root = fxmlLoader.load();
+        HomeCtrl controller = fxmlLoader.getController();
+        controller.setDBConection(pokeDB);
+        //para enviar el usuario
+        controller.setUser1(user1);
+        //cargamos la escena
+        Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setTitle("PokeJavaFX");
         stage.setScene(scene);

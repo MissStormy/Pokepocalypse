@@ -19,7 +19,7 @@ public class AppMain extends Application {
         Parent root = fxmlLoader.load();
         AppMainCtrl controller = fxmlLoader.getController();
         controller.setDBConection(pokeDB);
-        //va a dar conflicto, ~~SI~~ PUES NO
+        //cargamos la escena
         Scene scene = new Scene(root, 659, 501);
         stage.setTitle("PokeJavaFX");
         stage.setScene(scene);
@@ -27,12 +27,10 @@ public class AppMain extends Application {
         stage.show();
     }
     public void stop(){
-
         pokeDB.cerrar();
     }
 
     public static void main(String[] args) {
-
         launch();
     }
 }

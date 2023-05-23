@@ -8,12 +8,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-
+import javax.swing.text.html.ImageView;
 import java.io.IOException;
 import java.util.*;
 
@@ -34,37 +36,28 @@ public class PokedexCtrl {
     private ImageView ImgPoke;
 
     @FXML
-    private ImageView ImgPoke1;
-
-    @FXML
-    private ImageView ImgPoke2;
-
-    @FXML
-    private ImageView ImgPoke3;
-
-    @FXML
-    private ImageView ImgPoke4;
-
-    @FXML
     private Label LblPoke;
 
     @FXML
-    private Label LblPoke1;
+    private ListView<?> LvPokedex;
 
     @FXML
-    private Label LblPoke2;
+    private TextField TxtAltura;
 
     @FXML
-    private Label LblPoke3;
+    private TextField TxtAtq1;
 
     @FXML
-    private Label LblPoke4;
+    private TextField TxtAtq2;
 
     @FXML
-    private TextField TxtDefensa;
+    private TextField TxtAtq3;
 
     @FXML
-    private TextArea TxtDesc;
+    private TextField TxtAtq4;
+
+    @FXML
+    private TextField TxtEvolucion;
 
     @FXML
     private TextField TxtPeso;
@@ -72,18 +65,18 @@ public class PokedexCtrl {
     @FXML
     private TextField TxtTipo;
 
-    //Cargamos la conexion con la BD
-    private DBConection pokeDB;
-    public void setDBConection(DBConection con){
-        pokeDB = con;
-    }
-
-
     @FXML
     void OnClickAnterior(ActionEvent event) {
-        //TODO: Con este boton, se tiene que mover el array/cosa un puesto hacia atras en la pokedex
-    }
 
+    }
+    private DBConection pokeDB;
+    private User user1;
+    private Pokimon[] pokedex;
+    public void setInitialValues(DBConection con,User user,Pokimon[] pkdx){
+        pokeDB = con;
+        user1 = user;
+        pokedex = pkdx;
+    }
     @FXML
     void OnClickClose(ActionEvent event) {
         Node source = (Node) event.getSource();
@@ -107,6 +100,6 @@ public class PokedexCtrl {
 
     @FXML
     void OnClickSiguiente(ActionEvent event) {
-        //TODO: Con este boton, se mueve 1 puesto hacia delante
+
     }
 }

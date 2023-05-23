@@ -6,18 +6,22 @@ package com.pokejavafx.pokejavafx;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.*;
 
-public class HomeCtrl {
+public class HomeCtrl implements Initializable {
     @FXML
     private Button BtnClicker;
 
@@ -32,16 +36,29 @@ public class HomeCtrl {
 
     @FXML
     private Button BtnTienda;
-    //Cargamos la conexion con la BD
+    @FXML
+    private TextArea TxtWelcome;
+
+    //Cargar base de datos
     private DBConection pokeDB;
-    public void setDBConection(DBConection con){
-        pokeDB = con;
+    private User user1;
+    public void setDBConection(DBConection con){ pokeDB = con; }
+    public void setUser1(User user){
+        user1 = user;
+        TxtWelcome.setText("Bienvenido de vuelta " + user1.getUsername());
     }
     @FXML
     void OnClickClicker(ActionEvent event) throws IOException {
         //TODO: Hacer pantalla de clicker
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("clicker.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        //Para enviar la conexion de bases de datos
+        Parent root = fxmlLoader.load();
+        ClickerCtrl controller = fxmlLoader.getController();
+        controller.setDBConection(pokeDB);
+        //para enviar el usuario
+        controller.setUser1(user1);
+        //cargamos la escena
+        Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
@@ -63,7 +80,14 @@ public class HomeCtrl {
     void OnClickPerfil(ActionEvent event) throws IOException {
         //TODO: Hacer perfil
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("perfil.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        //Para enviar la conexion de bases de datos
+        Parent root = fxmlLoader.load();
+        PerfilCtrl controller = fxmlLoader.getController();
+        controller.setDBConection(pokeDB);
+        //para enviar el usuario
+        controller.setUser1(user1);
+        //cargamos la escena
+        Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
@@ -77,7 +101,13 @@ public class HomeCtrl {
     void OnClickPokedex(ActionEvent event) throws IOException {
         //TODO: Hacer pokedex
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("pokedex.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        //Para enviar la conexion de bases de datos, el usuario y la pokedex
+        Parent root = fxmlLoader.load();
+        PokedexCtrl controller = fxmlLoader.getController();
+        Pokimon[] pkdx = pokeDB.getPokedex();
+        controller.setInitialValues(pokeDB,user1,pkdx);
+        //cargamos la escena
+        Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
@@ -91,7 +121,13 @@ public class HomeCtrl {
     void OnClickTienda(ActionEvent event) throws IOException {
         //TODO: Hacer tienda
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("tienda.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        //Para enviar la conexion de bases de datos, el usuario y los objetos.
+        Parent root = fxmlLoader.load();
+        TiendaCtrl controller = fxmlLoader.getController();
+        Objeto[] objs = pokeDB.getListaObjetos();
+        controller.setInitialValues(pokeDB,user1,objs);
+        //cargamos la escena
+        Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
@@ -99,5 +135,9 @@ public class HomeCtrl {
 
         Stage stagePrincipal = (Stage) BtnTienda.getScene().getWindow();
         stagePrincipal.close();
+    }
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
     }
 }
