@@ -78,7 +78,6 @@ public class TiendaCtrl implements Initializable {
         objs = objetos;
     }
 
-
     @FXML
     void OnClickClose(ActionEvent event) {
         Node source = (Node) event.getSource();
