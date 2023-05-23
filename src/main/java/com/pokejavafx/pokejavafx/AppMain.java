@@ -27,12 +27,10 @@ public class AppMain extends Application {
         stage.show();
     }
     public void stop(){
-
         pokeDB.cerrar();
     }
 
     public static void main(String[] args) {
-
         launch();
     }
 }
