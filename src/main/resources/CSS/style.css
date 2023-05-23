@@ -89,9 +89,7 @@
     -fx-font-size: 15px;
     -fx-text-fill: White;
 }
-.image-button:hover{
-    -fx-effect: Bloom;
-}
+
 /*Tienda*/
 .button-tienda{
     -fx-background-color: #b242b4;
