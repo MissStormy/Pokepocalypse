@@ -65,6 +65,7 @@ public class PokedexCtrl {
     @FXML
     private TextField TxtTipo;
 
+
     @FXML
     void OnClickAnterior(ActionEvent event) {
 
@@ -77,6 +78,7 @@ public class PokedexCtrl {
         user1 = user;
         pokedex = pkdx;
     }
+
     @FXML
     void OnClickClose(ActionEvent event) {
         Node source = (Node) event.getSource();

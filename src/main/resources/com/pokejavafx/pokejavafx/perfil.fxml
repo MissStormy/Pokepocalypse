@@ -54,7 +54,5 @@
           <TableColumn fx:id="Tbc2" prefWidth="100.0" text="Tipo" />
         </columns>
       </TableView>
-
-      <AnchorPane fx:id="APPerfil" layoutX="19.0" layoutY="137.0" prefHeight="249.0" prefWidth="216.0" styleClass="tab-background" visible="false" />
    </children>
 </AnchorPane>
