@@ -81,12 +81,6 @@ public class PokedexCtrl {
         pokedex = pokimons;
     }
 
-    //Cargamos la conexion con la BD
-    private DBConection pokeDB;
-    public void setDBConection(DBConection con){
-        pokeDB = con;
-    }
-
 
     @FXML
     void OnClickAnterior(ActionEvent event) {
