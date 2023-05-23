@@ -69,7 +69,14 @@ public class PokedexCtrl {
     void OnClickAnterior(ActionEvent event) {
 
     }
-
+    private DBConection pokeDB;
+    private User user1;
+    private Pokimon[] pokedex;
+    public void setInitialValues(DBConection con,User user,Pokimon[] pkdx){
+        pokeDB = con;
+        user1 = user;
+        pokedex = pkdx;
+    }
     @FXML
     void OnClickClose(ActionEvent event) {
         Node source = (Node) event.getSource();
