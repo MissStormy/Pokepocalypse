@@ -100,4 +100,13 @@ public class PokedexCtrl {
     void OnClickSiguiente(ActionEvent event) {
 
     }
+    @FXML
+    void OnClickPokeLista(ActionEvent event) {
+
+    }
+
+    @FXML
+    void OnClickPokeVista(ActionEvent event) {
+
+    }
 }
