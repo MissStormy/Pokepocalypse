@@ -80,9 +80,18 @@
 .label-pokedex{
     -fx-font-family: "Bauhaus 93";
     -fx-font-size: 30px;
-    -fx-font-color: black;
-}
+    -fx-text-fill: #D0F1FF;
 
+
+}
+.label-little-pokedex{
+    -fx-font-family: "Bauhaus 93";
+    -fx-font-size: 15px;
+    -fx-text-fill: White;
+}
+.image-button:hover{
+    -fx-effect: Bloom;
+}
 /*Tienda*/
 .button-tienda{
     -fx-background-color: #b242b4;
