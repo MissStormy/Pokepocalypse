@@ -28,9 +28,12 @@ public class BatallaCtrl {
     private TextArea TxtBattle;
     private DBConection pokeDB;
     private User user1;
-    public void setDBConection(DBConection con){ pokeDB = con; }
-    public void setUser1(User user){
+    private Pokimon[] pokedex;
+    public void setInitialValues(DBConection con,User user,Pokimon[] pokimons) {
+        pokeDB = con;
         user1 = user;
+        pokedex = pokimons;
+
     }
 
     @FXML

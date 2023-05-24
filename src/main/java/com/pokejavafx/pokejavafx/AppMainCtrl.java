@@ -77,7 +77,6 @@ public class AppMainCtrl{
     }
     @FXML
     void OnClickCrear(ActionEvent event) {
-        //TODO: Aqui hay que meter la conexion y queries para guardar los datos en la BBDD
         String user = txtCrearUser.getText();
         String pass = txtCrearPass.getText();
         if (pokeDB.signup(user,pass,"")){
