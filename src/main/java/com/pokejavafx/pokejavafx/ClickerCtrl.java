@@ -63,7 +63,12 @@ public class ClickerCtrl implements Initializable {
             LbProgress.setText(Integer.toString((int)Math.round(progress*100)) + " Pasos dados");
         }else {
             FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("batalla.fxml"));
-            Scene scene = new Scene(fxmlLoader.load());
+            //Para enviar la conexion de bases de datos, el usuario y la pokedex
+            Parent root = fxmlLoader.load();
+            BatallaCtrl controller = fxmlLoader.getController();
+            controller.setInitialValues(pokeDB,user1,pokedex);
+            //cargamos la escena
+            Scene scene = new Scene(root);
             Stage stage = new Stage();
             stage.setTitle("PokeJavaFX");
             stage.setScene(scene);

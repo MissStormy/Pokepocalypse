@@ -1,22 +1,31 @@
 package com.pokejavafx.pokejavafx;
 
+import javafx.scene.control.Alert;
+
 import java.sql.*;
 
 public class DBConection {
     private Connection con;
     private String ultimoError="Ninguno";
 
+    public Connection getCon() {
+        return con;
+    }
 
-
-    public  DBConection(String a,String s, String d) {
+    public  DBConection(String database, String user, String password) {
         System.out.println("Conectando con la base de datos...");
         try {
-            this.con = DriverManager.getConnection(a,s,d);
+            this.con = DriverManager.getConnection(database,user,password);
             System.out.println("Conectado con exito.");
         }catch (
                 SQLException e){
             this.ultimoError=e.toString();
             System.out.println("Conexion fallida.");
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Error de conexion");
+            alert.setContentText("No se ha podido conectar a la base de datos");
+            alert.showAndWait();
+            this.con=null;
         }
     }
 
