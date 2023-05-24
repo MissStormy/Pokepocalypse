@@ -13,7 +13,7 @@ public class AppMain extends Application {
     private  DBConection pokeDB;
     @Override
     public void start(Stage stage) throws IOException {
-        pokeDB = new DBConection("jdbc:mysql://localhost:3306/pokejava?serverTimezone=UTC","root","verysecret");
+        pokeDB = new DBConection("jdbc:mysql://localhost:3306/pokejava?serverTimezone=UTC","root","toor");
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("login.fxml"));
         //Para enviar la conexion de bases de datos
         Parent root = fxmlLoader.load();
