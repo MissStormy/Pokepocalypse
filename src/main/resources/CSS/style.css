@@ -100,3 +100,16 @@
     -fx-background-color: rgba(53,89,119,0.4); /* Color cuando se pasa el cursor */
     -fx-text-fill: #FFFFFF; /* Color del texto cuando se pasa el cursor */
 }
+
+/*Clicker*/
+.clicker-label{
+    -fx-font-family: "Bauhaus 93";
+    -fx-font-size: 50px;
+    -fx-text-fill: White;
+}
+.clicker-button{
+    -fx-background-color: transparent;
+    -fx-font-family: "Bauhaus 93";
+    -fx-font-size: 30px;
+    -fx-text-fill: black;
+}

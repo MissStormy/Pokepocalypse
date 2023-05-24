@@ -18,6 +18,7 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ClickerCtrl implements Initializable {
@@ -25,7 +26,11 @@ public class ClickerCtrl implements Initializable {
     private Label LbProgress;
     @FXML
     private Button BtnCaminar;
+    @FXML
+    private Button BtnPokedex;
 
+    @FXML
+    private Button BtnTienda;
     @FXML
     private Button BtnClose;
 
@@ -98,9 +103,46 @@ public class ClickerCtrl implements Initializable {
         Stage stagePrincipal = (Stage) BtnGoBack.getScene().getWindow();
         stagePrincipal.close();
     }
+    @FXML
+    void OnClickPokedex(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("pokedex.fxml"));
+        //Para enviar la conexion de bases de datos, el usuario y la pokedex
+        Parent root = fxmlLoader.load();
+        PokedexCtrl controller = fxmlLoader.getController();
+        Pokimon[] pkdx = pokeDB.getPokedex();
+        controller.setInitialValues(pokeDB,user1,pkdx);
+        //cargamos la escena
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.show();
 
+        Stage stagePrincipal = (Stage) BtnPokedex.getScene().getWindow();
+        stagePrincipal.close();
+    }
+
+    @FXML
+    void OnClickTienda(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("tienda.fxml"));
+        //Para enviar la conexion de bases de datos, el usuario y los objetos.
+        Parent root = fxmlLoader.load();
+        TiendaCtrl controller = fxmlLoader.getController();
+        Objeto[] objs = pokeDB.getListaObjetos();
+        controller.setInitialValues(pokeDB,user1,objs);
+        //cargamos la escena
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.show();
+
+        Stage stagePrincipal = (Stage) BtnTienda.getScene().getWindow();
+        stagePrincipal.close();
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //TODO: El chibi va por detras que la barra
         PgBar.progressProperty().bindBidirectional(ImgChibi.translateXProperty());
     }
 }
