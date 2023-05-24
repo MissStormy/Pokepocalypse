@@ -13,14 +13,14 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../../../CSS/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pokejavafx.pokejavafx.PokedexCtrl">
    <children>
-      <AnchorPane prefHeight="402.0" prefWidth="602.0" styleClass="background" stylesheets="@../../../CSS/style.css">
+      <AnchorPane fx:id="AnchList" prefHeight="402.0" prefWidth="602.0" styleClass="background" stylesheets="@../../../CSS/style.css">
          <children>
             <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
                <image>
                   <Image url="@../../../img/BG/PokeBG.jpg" />
                </image>
             </ImageView>
-            <ImageView fitHeight="242.0" fitWidth="308.0" layoutX="327.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="ImgPoke" fitHeight="242.0" fitWidth="308.0" layoutX="327.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../img/Pokemon/mimikyu.png" />
                </image>
@@ -60,14 +60,14 @@
             <Button fx:id="BtnSiguiente" layoutX="518.0" layoutY="186.0" mnemonicParsing="false" onAction="#OnClickSiguiente" prefHeight="44.0" prefWidth="40.0" styleClass="button-home" />
          </children>
       </AnchorPane>
-      <AnchorPane prefHeight="402.0" prefWidth="602.0" visible="false">
+      <AnchorPane fx:id="AnchDetalle" prefHeight="402.0" prefWidth="602.0" visible="false">
          <children>
             <ImageView fitHeight="402.0" fitWidth="602.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../img/BG/CyberBG.PNG" />
                </image>
             </ImageView>
-            <ImageView fitHeight="262.0" fitWidth="189.0" layoutX="213.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="ImgPokeDetalle" fitHeight="262.0" fitWidth="189.0" layoutX="213.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../img/Pokemon/mimikyu.png" />
                </image>
@@ -90,7 +90,7 @@
                   <DropShadow />
                </effect>
             </Line>
-            <TextArea fx:id="TxtDescripcion" layoutX="422.0" layoutY="108.0" prefHeight="152.0" prefWidth="119.0" />
+            <TextArea fx:id="TxtDescripcion" layoutX="422.0" layoutY="108.0" prefHeight="152.0" prefWidth="119.0" wrapText="true" />
             <TextField fx:id="TxtDefensa" layoutX="114.0" layoutY="129.0" prefHeight="24.0" prefWidth="72.0" />
             <TextField fx:id="TxtAtaque" layoutX="114.0" layoutY="172.0" prefHeight="24.0" prefWidth="72.0" />
             <TextField fx:id="TxtPeso" layoutX="115.0" layoutY="214.0" prefHeight="24.0" prefWidth="72.0" />
