@@ -98,7 +98,6 @@ public class HomeCtrl implements Initializable {
 
     @FXML
     void OnClickPokedex(ActionEvent event) throws IOException {
-        //TODO: Hacer pokedex
         FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("pokedex.fxml"));
         //Para enviar la conexion de bases de datos, el usuario y la pokedex
         Parent root = fxmlLoader.load();
