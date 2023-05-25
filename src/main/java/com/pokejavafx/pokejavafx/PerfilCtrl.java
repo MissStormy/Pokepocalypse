@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -18,6 +19,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class PerfilCtrl {
+    public ImageView ImgUsr;
     @FXML
     private Button BtnAbout;
 
@@ -46,7 +48,10 @@ public class PerfilCtrl {
     private DBConection pokeDB;
     public void setDBConection(DBConection con){ pokeDB = con; }
     private User user1;
-    public void setUser1(User user){ user1 = user; }
+    public void setUser1(User user){ user1 = user;
+    LblPerfil.setText(user1.getUsername());
+    ImgUsr.setImage(user1.getImage());
+    }
 
     /*public void initialize() {
         // Configuración inicial del controlador
@@ -77,15 +82,7 @@ public class PerfilCtrl {
     void OnClickAbout(ActionEvent event) {
         TxtPerfil.setVisible(true);
         TbwCapturas.setVisible(false);
-        TxtPerfil.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. " +
-                "Fusce in ullamcorper erat, pellentesque rutrum orci. " +
-                "Aenean aliquam dolor massa, a venenatis nisl mollis in. " +
-                "Donec nisi massa, tincidunt sed dapibus vel, dapibus ut nisl. " +
-                "Cras hendrerit libero ac lorem dignissim venenatis. " +
-                "Maecenas vitae turpis vitae dolor cursus congue nec posuere ipsum. " +
-                "Ut ultrices enim eget tincidunt tincidunt. Mauris pulvinar dapibus libero, " +
-                "non pharetra mi imperdiet id. Aenean rutrum, dolor quis egestas venenatis, " +
-                "nisl tellus viverra diam, eleifend auctor urna elit cursus eros. .");
+        TxtPerfil.setText(user1.getLore());
     }
 
     @FXML
