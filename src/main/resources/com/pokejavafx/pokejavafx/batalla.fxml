@@ -6,7 +6,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="421.0" prefWidth="286.0" stylesheets="@../../../CSS/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pokejavafx.pokejavafx.BatallaCtrl">
    <children>
       <ImageView fitHeight="431.0" fitWidth="289.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true">
@@ -26,11 +25,16 @@
          </image>
       </ImageView>
       <Button fx:id="BtnHuir" layoutX="185.0" layoutY="351.0" mnemonicParsing="false" onAction="#OnClickHuir" styleClass="button-perfil" text="Huir" />
-      <ImageView fitHeight="138.0" fitWidth="221.0" layoutX="36.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="261.0" fitWidth="221.0" layoutX="36.0" layoutY="56.0" pickOnBounds="true">
          <image>
             <Image url="@../../../img/battleui.png" />
          </image>
       </ImageView>
-      <TextArea fx:id="TxtBattle" layoutX="64.0" layoutY="179.0" prefHeight="68.0" prefWidth="168.0" promptText="Ante ti hay..." />
+      <TextArea fx:id="TxtBattle" layoutX="63.0" layoutY="121.0" prefHeight="45.0" prefWidth="168.0" promptText="Ante ti hay..." />
+      <ImageView fx:id="ImgBattle" fitHeight="101.0" fitWidth="119.0" layoutX="105.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../img/Pokemon/error.PNG" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
