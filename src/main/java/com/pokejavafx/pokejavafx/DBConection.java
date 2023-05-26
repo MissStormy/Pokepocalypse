@@ -146,4 +146,23 @@ public class DBConection {
             return null;
         }
     }
+    public Boolean catchPokimon(Pokimon pkmn, User user){
+        try {
+            Statement st = this.con.createStatement();
+            ResultSet rs = st.executeQuery("select * from jugador_has_pokimon where jugadorNombre ='"+user.getUsername()+"'"+"and pokimonID ='"+pkmn.id+"'");
+            if ( !rs.next()) {
+                st.execute("INSERT INTO `pokejava`.`jugador_has_pokimon` (`jugadorNombre`, `pokimonID`) VALUES ('"+user.getUsername()+"', '"+pkmn.id+"');");
+                System.out.println("Usuario "+user.getUsername()+" ha capturado un "+ pkmn.nombre);
+                return true;
+            } else {
+                System.out.println("Fallo al guardar pokimon capturado, ya se ha capturado uno igual");
+                st.close();
+                return false;
+            }
+        }catch (SQLException e){
+            this.ultimoError=e.toString();
+            System.out.println("No se ha podido guardar el pokemon capturado debido al siguiente error: "+e);
+            return false;
+        }
+    }
 }
