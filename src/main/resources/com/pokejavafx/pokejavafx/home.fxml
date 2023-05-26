@@ -22,7 +22,7 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </ImageView>
-      <Button fx:id="BtnClose" layoutX="560.0" layoutY="14.0" mnemonicParsing="false" onAction="#OnClickClose" prefHeight="22.0" prefWidth="26.0" text="X" />
+      <Button fx:id="BtnClose" layoutX="560.0" layoutY="14.0" mnemonicParsing="false" onAction="#OnClickClose" prefHeight="22.0" prefWidth="26.0" styleClass="button-perfil" text="X" />
       <Line endX="-9.0" endY="299.0" layoutX="81.0" layoutY="14.0" startX="-9.0" startY="-16.0" stroke="#ff06ff" strokeWidth="5.0">
          <effect>
             <BoxBlur />
@@ -98,7 +98,7 @@
             <Image url="@../../../img/homeui.png" />
          </image>
       </ImageView>
-      <ProgressBar layoutX="361.0" layoutY="275.0" prefHeight="18.0" prefWidth="212.0" />
+      <ProgressBar layoutX="328.0" layoutY="335.0" prefHeight="18.0" prefWidth="212.0" />
       <TextArea fx:id="TxtWelcome" layoutX="417.0" layoutY="80.0" prefHeight="73.0" prefWidth="140.0" wrapText="true" />
    </children>
 </AnchorPane>

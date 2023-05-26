@@ -36,6 +36,9 @@
     -fx-font-size: 15px;
 
 }
+.progress-bar-home .indicator{
+    -fx-background-color: black;
+}
 
 .label{
     -fx-font-family: "Bauhaus 93";
