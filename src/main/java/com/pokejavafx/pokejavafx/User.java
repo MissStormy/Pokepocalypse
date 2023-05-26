@@ -12,12 +12,15 @@ public class User {
     private Objeto obj1;
     private Objeto obj2;
     private Objeto obj3;
+    private Pokimon pkm1;
+    private Pokimon pkm2;
+    private Pokimon pkm3;
 
     // Constructor, getters y setters para username, password e image
     public User(String username, String lore, String image){
         this.username = username;
         this.lore = lore;
-        this.image = new Image("file:"+image);
+        this.image = new Image("file:src/main/resources/img/" + image);
     }
 
     public String getUsername() {
@@ -41,6 +44,6 @@ public class User {
     }
 
     public void setImage(String image) {
-        this.image = new Image("file:src/main/resources/img/"+image);
+        this.image = new Image("file:src/main/resources/img/" + image);
     }
 }
