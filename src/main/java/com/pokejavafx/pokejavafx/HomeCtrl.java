@@ -46,6 +46,7 @@ public class HomeCtrl implements Initializable {
     public void setUser1(User user){
         user1 = user;
         TxtWelcome.setText("Bienvenido de vuelta " + user1.getUsername());
+        TxtWelcome.setEditable(false);
     }
     @FXML
     void OnClickClicker(ActionEvent event) throws IOException {
