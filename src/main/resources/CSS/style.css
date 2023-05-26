@@ -103,6 +103,11 @@
     -fx-background-color: rgba(53,89,119,0.4); /* Color cuando se pasa el cursor */
     -fx-text-fill: #FFFFFF; /* Color del texto cuando se pasa el cursor */
 }
+.label-tienda{
+    -fx-font-family: "Bauhaus 93";
+    -fx-font-size: 50px;
+    -fx-text-fill: White;
+}
 
 /*Clicker*/
 .clicker-label{

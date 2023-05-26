@@ -98,7 +98,7 @@
             <Image url="@../../../img/homeui.png" />
          </image>
       </ImageView>
-      <ProgressBar layoutX="328.0" layoutY="335.0" prefHeight="18.0" prefWidth="212.0" />
+      <ProgressBar layoutX="328.0" layoutY="335.0" prefHeight="18.0" prefWidth="212.0" styleClass="progress-bar-home" />
       <TextArea fx:id="TxtWelcome" layoutX="417.0" layoutY="80.0" prefHeight="73.0" prefWidth="140.0" wrapText="true" />
    </children>
 </AnchorPane>
