@@ -49,7 +49,7 @@ public class DBConection {
             ResultSet rs = st.executeQuery("select * from pokedex where id ='"+id+"'");
             if (rs.next()){
                 return new Pokimon(rs.getString("Nombre"),rs.getInt("ID"),rs.getInt("Atq"),rs.getInt("Def"),rs.getInt("Peso"),rs.getString("Tipo"),rs.getString("Descripcion"),rs.getInt("evolucion"),rs.getInt("preevolucion"),rs.getString("Img"));
-            }else return new Pokimon ("Error",0,0,0,0,"null","Este pokimon no existe",0,0,"@../../../img/Pokemon/error.png");
+            }else return new Pokimon ("Error",0,0,0,0,"null","Este pokimon no existe",0,0,"error.png");
         }catch (
                 SQLException e){
             this.ultimoError=e.toString();
