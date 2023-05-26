@@ -12,6 +12,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -24,6 +25,7 @@ public class BatallaCtrl implements Initializable {
     @FXML
     private Button BtnAtrapar;
 
+    public ImageView ImgBattle;
     @FXML
     private Button BtnHuir;
 
@@ -36,15 +38,16 @@ public class BatallaCtrl implements Initializable {
         pokeDB = con;
         user1 = user;
         pokedex = pokimons;
-        Pokimon pokemon = pokimons[(int)Math.random()*(pokimons.length-1)];
+        Pokimon pokemon = pokimons[(int)(Math.random()*(pokimons.length-1))];
         TxtBattle.setText("Ante ti hay un " + pokemon.nombre);
-        
+        ImgBattle.setImage(pokemon.img);
+
 
     }
 
     @FXML
     void OnClickAtrapar(ActionEvent event) {
-
+        //TODO: Aqui se tienen que meter en la tabla jugador_has_pokimon??
     }
 
     @FXML
