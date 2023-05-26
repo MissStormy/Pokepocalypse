@@ -48,7 +48,7 @@ public class BatallaCtrl implements Initializable {
 
     @FXML
     void OnClickAtrapar(ActionEvent event) {
-        pokeDB.(pokemon,user1);
+        pokeDB.catchPokimon(pokemon,user1);
     }
 
     @FXML
