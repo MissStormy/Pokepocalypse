@@ -34,11 +34,12 @@ public class BatallaCtrl implements Initializable {
     private DBConection pokeDB;
     private User user1;
     private Pokimon[] pokedex;
+    private Pokimon pokemon;
     public void setInitialValues(DBConection con,User user,Pokimon[] pokimons) {
         pokeDB = con;
         user1 = user;
         pokedex = pokimons;
-        Pokimon pokemon = pokimons[(int)(Math.random()*(pokimons.length-1))];
+        pokemon = pokimons[(int)(Math.random()*(pokimons.length-1))];
         TxtBattle.setText("Ante ti hay un " + pokemon.nombre);
         ImgBattle.setImage(pokemon.img);
 
@@ -47,7 +48,7 @@ public class BatallaCtrl implements Initializable {
 
     @FXML
     void OnClickAtrapar(ActionEvent event) {
-        //TODO: Aqui se tienen que meter en la tabla jugador_has_pokimon??
+        pokeDB.(pokemon,user1);
     }
 
     @FXML
