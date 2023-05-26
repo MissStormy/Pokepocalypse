@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
-public class TiendaCtrl implements Initializable {
+public class TiendaCtrl{
     @FXML
     private AnchorPane APComprar;
 
@@ -72,10 +72,22 @@ public class TiendaCtrl implements Initializable {
     private DBConection pokeDB;
     private User user1;
     private Objeto[] objs;
+    private Objeto obj1;
+    private Objeto obj2;
+    private Objeto obj3;
+    private Objeto obj4;
     public void setInitialValues(DBConection con,User user,Objeto[] objetos){
         pokeDB = con;
         user1 = user;
         objs = objetos;
+        obj1 = objetos[(int) (Math.random()*(objs.length-1))];
+        obj2 = objetos[(int) (Math.random()*(objs.length-1))];
+        obj3 = objetos[(int) (Math.random()*(objs.length-1))];
+        obj4 = objetos[(int) (Math.random()*(objs.length-1))];
+        LblSlot1.setText(obj1.nombre);
+        LblSlot2.setText(obj2.nombre);
+        LblSlot3.setText(obj3.nombre);
+        LblSlot4.setText(obj4.nombre);
     }
 
     @FXML
@@ -125,10 +137,5 @@ public class TiendaCtrl implements Initializable {
         APComprar.setVisible(false);
         APVender.setVisible(true);
         APTransferir.setVisible(false);
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        //TODO: Imagino que lo de sacar cuatro objetos de la base de datos y meterlos en cada run se hace desde el inicio con esto
     }
 }

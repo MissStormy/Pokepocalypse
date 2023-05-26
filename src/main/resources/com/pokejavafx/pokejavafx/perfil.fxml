@@ -18,7 +18,7 @@
             <Image url="@../../../img/perfilBG.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="390.0" fitWidth="282.0" layoutX="210.0" layoutY="6.0" pickOnBounds="true">
+      <ImageView fx:id="ImgUsr" fitHeight="390.0" fitWidth="282.0" layoutX="210.0" layoutY="6.0" pickOnBounds="true">
          <image>
             <Image url="@../../../img/laraPerfil.png" />
          </image>

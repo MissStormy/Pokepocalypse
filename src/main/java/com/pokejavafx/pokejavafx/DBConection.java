@@ -1,6 +1,7 @@
 package com.pokejavafx.pokejavafx;
 
 import javafx.scene.control.Alert;
+import javafx.scene.image.Image;
 
 import java.sql.*;
 
@@ -47,8 +48,8 @@ public class DBConection {
             Statement st = this.con.createStatement();
             ResultSet rs = st.executeQuery("select * from pokedex where id ='"+id+"'");
             if (rs.next()){
-                return new Pokimon(rs.getString("Nombre"),rs.getInt("ID"),rs.getInt("Atq"),rs.getInt("Def"),rs.getInt("Peso"),rs.getString("Tipo"),rs.getString("Descripcion"),rs.getInt("evolucion"),rs.getInt("preevolucion"));
-            }else return new Pokimon ("Error",0,0,0,0,"null","Este pokimon no existe",0,0);
+                return new Pokimon(rs.getString("Nombre"),rs.getInt("ID"),rs.getInt("Atq"),rs.getInt("Def"),rs.getInt("Peso"),rs.getString("Tipo"),rs.getString("Descripcion"),rs.getInt("evolucion"),rs.getInt("preevolucion"),rs.getString("Img"));
+            }else return new Pokimon ("Error",0,0,0,0,"null","Este pokimon no existe",0,0,"@../../../img/Pokemon/error.png");
         }catch (
                 SQLException e){
             this.ultimoError=e.toString();
@@ -110,11 +111,11 @@ public class DBConection {
             if(rs != null){ //Comprobar cuantos pokemon tenemos
                 rs.last();
                 size=rs.getRow();
-                rs.first();
+                rs.beforeFirst();
             }
             Pokimon[] pokedex = new Pokimon[size];
             while (rs.next()){
-                pokedex[rs.getRow()-1] = new Pokimon(rs.getString("Nombre"),rs.getInt("ID"),rs.getInt("Atq"),rs.getInt("Def"),rs.getInt("Peso"),rs.getString("Tipo"),rs.getString("Descripcion"),rs.getInt("evolucion"),rs.getInt("preevolucion"));
+                pokedex[rs.getRow()-1] = new Pokimon(rs.getString("Nombre"),rs.getInt("ID"),rs.getInt("Atq"),rs.getInt("Def"),rs.getInt("Peso"),rs.getString("Tipo"),rs.getString("Descripcion"),rs.getInt("evolucion"),rs.getInt("preevolucion"),rs.getString("Img"));
             }
             return pokedex;
         }catch (SQLException e){
@@ -131,7 +132,7 @@ public class DBConection {
             if(rs != null){ //Comprobar cuantos pokemon tenemos
                 rs.last();
                 size=rs.getRow();
-                rs.first();
+                rs.beforeFirst();
             }
             Objeto[] objs = new Objeto[size];
             while (rs.next()){

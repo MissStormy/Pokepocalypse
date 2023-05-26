@@ -3,10 +3,12 @@
  */
 package com.pokejavafx.pokejavafx;
 
+import javafx.scene.image.Image;
+
 public class User {
     private String username;
     private String lore;
-    private String image;
+    private Image image;
     private Objeto obj1;
     private Objeto obj2;
     private Objeto obj3;
@@ -15,7 +17,7 @@ public class User {
     public User(String username, String lore, String image){
         this.username = username;
         this.lore = lore;
-        this.image = image;
+        this.image = new Image("file:"+image);
     }
 
     public String getUsername() {
@@ -34,11 +36,11 @@ public class User {
         this.lore = lore;
     }
 
-    public String getImage() {
+    public Image getImage() {
         return image;
     }
 
     public void setImage(String image) {
-        this.image = image;
+        this.image = new Image("file:src/main/resources/img/"+image);
     }
 }

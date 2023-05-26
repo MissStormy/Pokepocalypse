@@ -1,5 +1,9 @@
 package com.pokejavafx.pokejavafx;
 
+import javafx.scene.image.Image;
+
+import java.awt.*;
+
 public class Pokimon {
     String nombre;
     int id;
@@ -12,6 +16,7 @@ public class Pokimon {
     int preevolucion;
     Ataque ataque1;
     Ataque ataque2;
+    Image img;
 
     public Ataque getAtaque1() {
         return ataque1;
@@ -48,7 +53,7 @@ public class Pokimon {
     Ataque ataque3;
     Ataque ataque4;
 
-    public Pokimon(String nombre, int id, int atq, int def, int peso, String tipo, String descripcion, int evolucion, int preevolucion) {
+    public Pokimon(String nombre, int id, int atq, int def, int peso, String tipo, String descripcion, int evolucion, int preevolucion, String img) {
         this.nombre = nombre;
         this.id = id;
         this.atq = atq;
@@ -58,5 +63,6 @@ public class Pokimon {
         this.descripcion = descripcion;
         this.evolucion = evolucion;
         this.preevolucion = preevolucion;
+        this.img=new Image("file:src/main/resources/img/Pokemon/"+img);
     }
 }
