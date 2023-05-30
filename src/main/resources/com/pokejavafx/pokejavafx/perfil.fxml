@@ -26,15 +26,15 @@
             <DropShadow />
          </effect>
       </ImageView>
-      <Label fx:id="LblPerfil" layoutX="34.0" layoutY="77.0" prefHeight="61.0" prefWidth="170.0" styleClass="label-perfil" text="Stormy" textFill="WHITE">
+      <Label fx:id="LblPerfil" layoutX="34.0" layoutY="77.0" prefHeight="61.0" prefWidth="282.0" styleClass="label-perfil" text="Stormy" textFill="WHITE">
          <font>
             <Font size="50.0" />
          </font>
       </Label>
       <Button fx:id="BtnAbout" layoutX="502.0" layoutY="138.0" mnemonicParsing="false" onAction="#OnClickAbout" styleClass="button-perfil" text="Sobre mi" underline="true" />
       <Button fx:id="BtnHunts" layoutX="452.0" layoutY="173.0" mnemonicParsing="false" onAction="#OnClickHunts" prefHeight="28.0" prefWidth="131.0" styleClass="button-perfil" text="Ultimas capturas" underline="true" />
-      <Button layoutX="517.0" layoutY="210.0" mnemonicParsing="false" styleClass="button-perfil" text="Button" underline="true" />
-      <Button layoutX="517.0" layoutY="245.0" mnemonicParsing="false" styleClass="button-perfil" text="Button" underline="true" />
+      <Button fx:id="BtnAjustes" layoutX="517.0" layoutY="210.0" mnemonicParsing="false" onAction="#OnClickAjustes" styleClass="button-perfil" text="Ajustes" underline="true" />
+      <Button fx:id="BtnCerrarSesion" layoutX="476.0" layoutY="245.0" mnemonicParsing="false" onAction="#OnClickCerrarSesion" styleClass="button-perfil" text="Cerrar sesión" underline="true" />
       <ImageView fitHeight="43.0" fitWidth="131.0" layoutX="-6.0" layoutY="12.0" pickOnBounds="true">
          <image>
             <Image url="@../../../img/glitchX.png" />
