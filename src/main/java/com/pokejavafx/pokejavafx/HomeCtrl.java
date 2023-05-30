@@ -86,6 +86,8 @@ public class HomeCtrl implements Initializable {
         controller.setDBConection(pokeDB);
         //para enviar el usuario
         controller.setUser1(user1);
+        //enviar pokemon capturados
+        controller.setCapturados(pokeDB.pokimonCapturados(user1));
         //cargamos la escena
         Scene scene = new Scene(root);
         Stage stage = new Stage();

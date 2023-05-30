@@ -80,9 +80,15 @@ public class AppMainCtrl{
         String user = txtCrearUser.getText();
         String pass = txtCrearPass.getText();
         if (pokeDB.signup(user,pass,"")){
-            //todo mensaje de que se ha creado bien el usuario
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Usuario creado");
+            alert.setContentText("El usuario "+user+" ha sido creado con exito.");
+            alert.showAndWait();
         }else {
-            //todo mensaje de que el usuario ya existe
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Error al crear el usuario");
+            alert.setContentText("Ha habido un error al crear el usuario, ya existe un usuario con el nombre \"" + user + ".");
+            alert.showAndWait();
         }
     }
 

@@ -56,7 +56,38 @@ public class PerfilCtrl {
     LblPerfil.setText(user1.getUsername());
     ImgUsr.setImage(user1.getImage());
     }
-    
+
+    Pokimon[] pokimons;
+    public void setCapturados(Pokimon[] pokimons){
+        this.pokimons = pokimons;
+    }
+
+    /*public void initialize() {
+        // Configuración inicial del controlador
+        initializeTableView();
+    }
+    private void initializeTableView() {
+        // Inicializar las columnas del TableView
+        Tbc1.setCellValueFactory(new PropertyValueFactory<>("data1"));
+        Tbc2.setCellValueFactory(new PropertyValueFactory<>("data2"));
+    }
+    public void showCaptureData() {
+        // Mostrar datos de capturas en el TableView
+        TxtPerfil.setVisible(false);
+        TbwCapturas.setVisible(true);
+        //TbwCapturas.setItems(getCaptureData()); // Obtener los datos de la base de datos
+    }
+    private ObservableList<CaptureData> getCaptureData() {
+        // Obtener los datos de la base de datos y retornarlos en una lista ObservableList
+        // Aquí debes implementar la lógica para obtener los datos de la base de datos y retornarlos
+        // como una lista de objetos CaptureData
+        // Por ejemplo:
+        ObservableList<CaptureData> data = FXCollections.observableArrayList();
+        data.add(new CaptureData("Dato 1", "Dato A"));
+        data.add(new CaptureData("Dato 2", "Dato B"));
+        return data;
+    }*/
+
     @FXML
     void OnClickAbout(ActionEvent event) {
         TxtPerfil.setVisible(true);

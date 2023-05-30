@@ -165,4 +165,25 @@ public class DBConection {
             return false;
         }
     }
+    public Pokimon[] pokimonCapturados(User user){
+        try {
+            Statement st = this.con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
+            ResultSet rs = st.executeQuery("SELECT * FROM pokejava.jugador_has_pokimon where jugadorNombre = '" + user.getUsername() + "';");
+            int size = 0;
+            if(rs != null){ //Comprobar cuantos pokemon tenemos
+                rs.last();
+                size=rs.getRow();
+                rs.beforeFirst();
+            }
+            Pokimon[] pokimons = new Pokimon[size];
+            while (rs.next()){
+                pokimons[rs.getRow()-1] = new Pokimon(rs.getString("Nombre"),rs.getInt("ID"),rs.getInt("Atq"),rs.getInt("Def"),rs.getInt("Peso"),rs.getString("Tipo"),rs.getString("Descripcion"),rs.getInt("evolucion"),rs.getInt("preevolucion"),rs.getString("Img"));
+            }
+            return pokimons;
+        }catch (SQLException e){
+            this.ultimoError=e.toString();
+            System.out.println("Error al conectar con la base de datos: "+e);
+            return null;
+        }
+    }
 }

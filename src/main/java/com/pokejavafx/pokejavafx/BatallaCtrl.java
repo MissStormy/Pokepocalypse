@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
@@ -47,8 +48,36 @@ public class BatallaCtrl implements Initializable {
     }
 
     @FXML
-    void OnClickAtrapar(ActionEvent event) {
-        pokeDB.catchPokimon(pokemon,user1);
+    void OnClickAtrapar(ActionEvent event) throws IOException {
+        if (pokeDB.catchPokimon(pokemon,user1)){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("¡Pokemon capturado!");
+            alert.setContentText("¡Has capturado un "+pokemon.nombre+"!");
+            alert.showAndWait();
+        }else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("¡Ha escapado!");
+            alert.setContentText("El "+pokemon.nombre+" se ha escapado.\n            :(");
+            alert.showAndWait();
+        }
+
+        FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("home.fxml"));
+        //Para enviar la conexion de bases de datos
+        Parent root = fxmlLoader.load();
+        HomeCtrl controller = fxmlLoader.getController();
+        controller.setDBConection(pokeDB);
+        //para enviar el usuario
+        controller.setUser1(user1);
+        //cargamos la escena
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setTitle("PokeJavaFX");
+        stage.setScene(scene);
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.show();
+
+        Stage stagePrincipal = (Stage) BtnHuir.getScene().getWindow();
+        stagePrincipal.close();
     }
 
     @FXML
