@@ -42,7 +42,7 @@
          <children>
             <TextField fx:id="txtCrearUser" layoutX="19.0" layoutY="31.0" prefHeight="22.0" prefWidth="246.0" promptText="Username" />
             <TextField fx:id="txtCrearPass" layoutX="19.0" layoutY="75.0" prefHeight="22.0" prefWidth="246.0" promptText="Password" />
-            <TextField fx:id="txtCrearEmail" layoutX="19.0" layoutY="123.0" prefHeight="22.0" prefWidth="246.0" promptText="Email" />
+            <TextField fx:id="txtCrearBio" layoutX="19.0" layoutY="123.0" prefHeight="50.0" prefWidth="246.0" promptText="Bio" />
             <Button layoutX="105.0" layoutY="184.0" mnemonicParsing="false" onAction="#OnClickCrear" text="Crear cuenta" />
          </children>
          <effect>

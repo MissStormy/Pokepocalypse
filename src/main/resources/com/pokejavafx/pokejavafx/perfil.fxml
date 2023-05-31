@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.effect.DropShadow?>
@@ -48,11 +47,6 @@
       </ImageView>
       <Button fx:id="BtnClose" layoutX="548.0" layoutY="19.0" mnemonicParsing="false" onAction="#OnClickClose" styleClass="button-perfil" text="X" />
       <TextArea fx:id="TxtPerfil" layoutX="34.0" layoutY="146.0" prefHeight="225.0" prefWidth="189.0" styleClass="text-perfil" wrapText="true" />
-      <TableView fx:id="TbwCapturas" layoutX="29.0" layoutY="145.0" prefHeight="225.0" prefWidth="200.0" visible="false">
-        <columns>
-          <TableColumn fx:id="Tbc1" prefWidth="99.0" text="Nombre" />
-          <TableColumn fx:id="Tbc2" prefWidth="100.0" text="Tipo" />
-        </columns>
-      </TableView>
+      <TableView fx:id="TbwCapturas" layoutX="29.0" layoutY="145.0" prefHeight="225.0" prefWidth="200.0" visible="false" />
    </children>
 </AnchorPane>

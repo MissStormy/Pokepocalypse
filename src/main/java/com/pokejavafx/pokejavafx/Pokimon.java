@@ -26,6 +26,86 @@ public class Pokimon {
         this.ataque1 = ataque1;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getAtq() {
+        return atq;
+    }
+
+    public void setAtq(int atq) {
+        this.atq = atq;
+    }
+
+    public int getDef() {
+        return def;
+    }
+
+    public void setDef(int def) {
+        this.def = def;
+    }
+
+    public int getPeso() {
+        return peso;
+    }
+
+    public void setPeso(int peso) {
+        this.peso = peso;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public int getEvolucion() {
+        return evolucion;
+    }
+
+    public void setEvolucion(int evolucion) {
+        this.evolucion = evolucion;
+    }
+
+    public int getPreevolucion() {
+        return preevolucion;
+    }
+
+    public void setPreevolucion(int preevolucion) {
+        this.preevolucion = preevolucion;
+    }
+
+    public Image getImg() {
+        return img;
+    }
+
+    public void setImg(Image img) {
+        this.img = img;
+    }
+
     public Ataque getAtaque2() {
         return ataque2;
     }

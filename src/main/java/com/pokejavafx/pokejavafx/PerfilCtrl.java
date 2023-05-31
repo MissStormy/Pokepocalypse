@@ -3,6 +3,8 @@
  */
 package com.pokejavafx.pokejavafx;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +18,6 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
-import java.util.*;
 
 public class PerfilCtrl {
     public ImageView ImgUsr;
@@ -42,12 +43,7 @@ public class PerfilCtrl {
     @FXML
     private TextArea TxtPerfil;
     @FXML
-    private TableView<?> TbwCapturas;
-    @FXML
-    private TableColumn<?, ?> Tbc1;
-
-    @FXML
-    private TableColumn<?, ?> Tbc2;
+    private TableView<Pokimon> TbwCapturas;
 
     private DBConection pokeDB;
     public void setDBConection(DBConection con){ pokeDB = con; }
@@ -57,9 +53,23 @@ public class PerfilCtrl {
     ImgUsr.setImage(user1.getImage());
     }
 
-    Pokimon[] pokimons;
+    ObservableList<Pokimon> pokimonsCapturados;
     public void setCapturados(Pokimon[] pokimons){
-        this.pokimons = pokimons;
+        this.pokimonsCapturados = FXCollections.observableArrayList(pokimons);
+        TableColumn Tbc1 = new TableColumn<>("Pokimon");
+        TableColumn Tbc2 = new TableColumn<>("Tipo");
+        Tbc1.setPrefWidth(TbwCapturas.getPrefWidth()/2);
+        Tbc2.setPrefWidth(TbwCapturas.getPrefWidth()/2);
+        Tbc1.setEditable(false);
+        Tbc2.setEditable(false);
+        Tbc1.setCellValueFactory(
+                new PropertyValueFactory<Pokimon,String>("nombre")
+        );
+        Tbc2.setCellValueFactory(
+                new PropertyValueFactory<Pokimon,String>("tipo")
+        );
+        TbwCapturas.setItems(pokimonsCapturados);
+        TbwCapturas.getColumns().addAll(Tbc1,Tbc2);
     }
 
     /*public void initialize() {
@@ -134,7 +144,18 @@ public class PerfilCtrl {
     }
 
     @FXML
-    void OnClickCerrarSesion(ActionEvent event) {
-
+    void OnClickCerrarSesion(ActionEvent event) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(AppMain.class.getResource("login.fxml"));
+        //Para enviar la conexion de bases de datos
+        Parent root = fxmlLoader.load();
+        AppMainCtrl controller = fxmlLoader.getController();
+        controller.setDBConection(pokeDB);
+        //cargamos la escena
+        Scene scene = new Scene(root, 659, 501);
+        Stage stage = new Stage();
+        stage.setTitle("PokeJavaFX");
+        stage.setScene(scene);
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.show();
     }
 }

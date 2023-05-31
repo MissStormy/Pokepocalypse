@@ -31,7 +31,7 @@ public class AppMainCtrl{
     @FXML
     private Button BtnSignUp;
     @FXML
-    private TextField txtCrearEmail;
+    private TextField txtCrearBio;
 
     @FXML
     private TextField txtCrearPass;
@@ -77,17 +77,15 @@ public class AppMainCtrl{
     }
     @FXML
     void OnClickCrear(ActionEvent event) {
-        String user = txtCrearUser.getText();
-        String pass = txtCrearPass.getText();
-        if (pokeDB.signup(user,pass,"")){
+        if (pokeDB.signup(txtCrearUser.getText(),txtCrearPass.getText(),txtCrearBio.getText(),"default.png")){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Usuario creado");
-            alert.setContentText("El usuario "+user+" ha sido creado con exito.");
+            alert.setContentText("El usuario "+txtCrearUser.getText()+" ha sido creado con exito.");
             alert.showAndWait();
         }else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error al crear el usuario");
-            alert.setContentText("Ha habido un error al crear el usuario, ya existe un usuario con el nombre \"" + user + ".");
+            alert.setContentText("Ha habido un error al crear el usuario, ya existe un usuario con el nombre \"" + txtCrearUser.getText() + ".");
             alert.showAndWait();
         }
     }

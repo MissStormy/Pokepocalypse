@@ -84,12 +84,12 @@ public class DBConection {
             return null;
         }
     }
-    public boolean signup(String nombre, String contrasenya, String img){
+    public boolean signup(String nombre, String contrasenya, String lore,String img){
         try {
             Statement st = this.con.createStatement();
             ResultSet rs = st.executeQuery("select * from jugadores where nombre ='"+nombre+"'");
             if ( !rs.next() && !nombre.equals("") && !contrasenya.equals("") ) {//todo manejar de forma individual, mediante errores, si el nombre o la contraseña estan vacias
-                st.execute("INSERT INTO `pokejava`.`jugadores` (`nombre`, `contrasenya`, `img`) VALUES ('"+nombre+"', '"+contrasenya+"', '"+img+"');");
+                st.execute("INSERT INTO `pokejava`.`jugadores` (`nombre`, `contrasenya`, `lore`, `img`) VALUES ('"+nombre+"', '"+contrasenya+"', '"+lore+"', '"+img+"');");
                 System.out.println("Usuario "+nombre+" creado correctamente");
                 return true;
             } else {
@@ -168,7 +168,7 @@ public class DBConection {
     public Pokimon[] pokimonCapturados(User user){
         try {
             Statement st = this.con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            ResultSet rs = st.executeQuery("SELECT * FROM pokejava.jugador_has_pokimon where jugadorNombre = '" + user.getUsername() + "';");
+            ResultSet rs = st.executeQuery("SELECT * FROM pokejava.pokedex where ID in (SELECT pokimonID FROM pokejava.jugador_has_pokimon where jugadorNombre = '" + user.getUsername() + "');");
             int size = 0;
             if(rs != null){ //Comprobar cuantos pokemon tenemos
                 rs.last();
