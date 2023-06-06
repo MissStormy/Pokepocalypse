@@ -157,5 +157,8 @@ public class PerfilCtrl {
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
+
+        Stage stagePrincipal = (Stage) BtnGoBack.getScene().getWindow();
+        stagePrincipal.close();
     }
 }

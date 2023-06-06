@@ -20,7 +20,7 @@ public class User {
     public User(String username, String lore, String image){
         this.username = username;
         this.lore = lore;
-        this.image = new Image("file:src/main/resources/img/" + image);
+        this.image = new Image("file:src/main/resources/img/ProfilePictures/" + image);
     }
 
     public String getUsername() {
